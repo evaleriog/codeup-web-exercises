@@ -10,7 +10,7 @@
         }
         .navigation li{
             display:inline-block;
-            margin-right: 10px;
+            padding: 5px 10px;
         }
 
         #codeup-header{
@@ -29,18 +29,34 @@
             background-color: darkgrey;
         }
 
+        table, td{
+            border-bottom: solid 1px black;
+            border-collapse: collapse;
+        }
+
         table{
             border: solid 1px black;
+            border-collapse: collapse;
         }
 
-        tr{
-            border: solid 1px black;
+        td>img{
+            float:right;
+            margin-right: 3px;
         }
-
         caption{
             text-align: left;
             border: solid 1px black;
             background-color: darkgrey;
+            padding:5px;
+        }
+
+        #selected{
+            background-color: white;
+        }
+        span{
+            background-color: grey;
+            margin:5px;
+            padding:2px;
         }
     </style>
 </head>
@@ -58,17 +74,15 @@
     </header>
     <main>
         <div id="codeup-header">
-            <p>
-                <img src="http://placeholder.pics/svg/30/DEDEDE/555555/Codeup%20Logo" alt="Codeup Logo">
-                Codeup
-            </p>
+            <img src="http://placeholder.pics/svg/30/DEDEDE/555555/Codeup%20Logo" alt="Codeup Logo" style="float:left">
+            <h1>Codeup</h1>
 
             <nav class="navigation">
                 <ul>
-                    <li>Repositories</li>
-                    <li>People</li>
-                    <li>Teams</li>
-                    <li>Projects</li>
+                    <li>Repositories<span>39</span></li>
+                    <li id="selected">People<span>15</span></li>
+                    <li>Teams<span>7</span></li>
+                    <li>Projects<span>0</span></li>
                     <li>Settings</li>
                 </ul>
             </nav>
@@ -77,17 +91,20 @@
             <table width="100%">
                 <caption>Codeup's dev team</caption>
                 <tr>
-                    <td><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar">Kent Beck<br>KentBeck</td>
+                    <td><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
+                    <td><a href="#">Kent Beck</a><br>KentBeck</td>
                     <td>Member</td>
                     <td>1 team</td>
                 </tr>
                 <tr>
-                    <td><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar">Codeup Instruction Staff<br>CodeupInstructors</td>
+                    <td><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
+                    <td><a href="#">Codeup Instruction Staff</a><br>CodeupInstructors</td>
                     <td>Member</td>
                     <td>1 team</td>
                 </tr>
                 <tr>
-                    <td><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar">Martin Fowler</td>
+                    <td><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
+                    <td><a href="#"> Martin Fowler</a></td>
                     <td>Member</td>
                     <td>0 teams</td>
                 </tr>
@@ -99,21 +116,21 @@
         <nav class="navigation" id="footer-left">
             <ul>
                 <li>@2018 Github, Inc.</li>
-                <li>Terms</li>
-                <li>Privacy</li>
-                <li>Security</li>
-                <li>Status</li>
-                <li>Help</li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Security</a></li>
+                <li><a href="#">Status</a></li>
+                <li><a href="#">Help</a></li>
             </ul>
         </nav>
         <nav class="navigation" id="footer-right">
             <ul>
-                <li>Contact Github</li>
-                <li>API</li>
-                <li>Training</li>
-                <li>Shop</li>
-                <li>Blog</li>
-                <li>About</li>
+                <li><a href="#">Contact Github</a></li>
+                <li><a href="#">API</a></li>
+                <li><a href="#">Training</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
             </ul>
         </nav>
     </footer>
