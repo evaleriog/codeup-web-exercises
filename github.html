@@ -7,16 +7,28 @@
         header{
             background-color: black;
             color: white;
+            margin-bottom:0px;
+        }
+
+        main{
+            margin-top: 0px;
         }
 
         .navigation li{
             display:inline-block;
             padding: 5px 10px;
             vertical-align: middle;
+            margin:0px;
         }
 
         #codeup-header{
             background-color: darkgrey;
+            margin: 0px;
+        }
+
+        #codeup-header img{
+            float: left;
+            margin-right: 5px;
         }
 
         #table-position{
@@ -55,7 +67,7 @@
             text-align: left;
             border: solid 1px black;
             background-color: darkgrey;
-            padding:5px;
+            padding:15px;
         }
 
         #selected{
@@ -87,32 +99,41 @@
         .team{
             width:10%;
         }
+
+        #top-nav a{
+            color: white;
+        }
+
+        #codeup-nav a{
+            color:black;
+        }
     </style>
 </head>
 <body>
     <header>
-        <nav class="navigation">
+        <nav class="navigation" id="top-nav">
             <ul>
-                <li><img src="http://placeholder.pics/svg/30/DEDEDE/555555/Github%20Logo" alt="Github Logo"></li>
-                <li>Pull requests</li>
-                <li>Issues</li>
-                <li>Marketplace</li>
-                <li>Explore</li>
+                <li><img src="img/github.png" alt="Github Logo" width="30" height="30"></li>
+                <li><a href="#">Pull requests</a></li>
+                <li><a href="#">Issues</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Explore</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <div id="codeup-header">
-            <img src="http://placeholder.pics/svg/30/DEDEDE/555555/Codeup%20Logo" alt="Codeup Logo" style="float:left">
-            <h1>Codeup</h1>
-
-            <nav class="navigation">
+            <div>
+                <img src="img/codeup.png" alt="Codeup Logo" width="30" height="30">
+                <h1>Codeup</h1>
+            </div>
+            <nav class="navigation" id="codeup-nav">
                 <ul>
-                    <li>Repositories<span>39</span></li>
-                    <li id="selected">People<span>15</span></li>
-                    <li>Teams<span>7</span></li>
-                    <li>Projects<span>0</span></li>
-                    <li>Settings</li>
+                    <li><a href="#">Repositories<span>39</span></a></li>
+                    <li id="selected"><a href="#">People<span>15</span></a></li>
+                    <li><a href="#">Teams<span>7</span></a></li>
+                    <li><a href="#">Projects<span>0</span></a></li>
+                    <li><a href="#">Settings</a></li>
                 </ul>
             </nav>
         </div>
@@ -120,19 +141,19 @@
             <table width="100%">
                 <caption>Codeup's dev team</caption>
                 <tr>
-                    <td class="image"><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
+                    <td class="image"><img src="img/github-user.png" alt="avatar" width="48" height="48"></td>
                     <td class="name"><a href="#">Kent Beck</a><br>KentBeck</td>
                     <td class="member">Member</td>
                     <td class="team">1 team</td>
                 </tr>
                 <tr>
-                    <td class="image"><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
+                    <td class="image"><img src="img/codeup.png" alt="avatar" width="48" height="48"></td>
                     <td class="name"><a href="#">Codeup Instruction Staff</a><br>CodeupInstructors</td>
                     <td class="member">Member</td>
                     <td class="team">1 team</td>
                 </tr>
                 <tr>
-                    <td class="image"><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
+                    <td class="image"><img src="img/github-user.png" alt="avatar" width="48" height="48"></td>
                     <td class="name"><a href="#"> Martin Fowler</a></td>
                     <td class="member">Member</td>
                     <td class="team">0 teams</td>
