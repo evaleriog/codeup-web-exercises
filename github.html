@@ -8,13 +8,19 @@
             background-color: black;
             color: white;
         }
+
         .navigation li{
             display:inline-block;
             padding: 5px 10px;
+            vertical-align: middle;
         }
 
         #codeup-header{
             background-color: darkgrey;
+        }
+
+        #table-position{
+            padding-top: 15px;
         }
 
         #footer-left{
@@ -29,9 +35,10 @@
             background-color: darkgrey;
         }
 
-        table, td{
+        td{
             border-bottom: solid 1px black;
             border-collapse: collapse;
+            padding: 5px;
         }
 
         table{
@@ -58,6 +65,26 @@
             background-color: grey;
             margin:5px;
             padding:2px;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .image{
+            width:10%;
+        }
+
+        .name{
+            width:70%;
+        }
+
+        .member{
+            width:10%;
+        }
+
+        .team{
+            width:10%;
         }
     </style>
 </head>
@@ -88,26 +115,26 @@
                 </ul>
             </nav>
         </div>
-        <div>
+        <div id="table-position">
             <table width="100%">
                 <caption>Codeup's dev team</caption>
                 <tr>
-                    <td><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
-                    <td><a href="#">Kent Beck</a><br>KentBeck</td>
-                    <td>Member</td>
-                    <td>1 team</td>
+                    <td class="image"><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
+                    <td class="name"><a href="#">Kent Beck</a><br>KentBeck</td>
+                    <td class="member">Member</td>
+                    <td class="team">1 team</td>
                 </tr>
                 <tr>
-                    <td><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
-                    <td><a href="#">Codeup Instruction Staff</a><br>CodeupInstructors</td>
-                    <td>Member</td>
-                    <td>1 team</td>
+                    <td class="image"><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
+                    <td class="name"><a href="#">Codeup Instruction Staff</a><br>CodeupInstructors</td>
+                    <td class="member">Member</td>
+                    <td class="team">1 team</td>
                 </tr>
                 <tr>
-                    <td><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
-                    <td><a href="#"> Martin Fowler</a></td>
-                    <td>Member</td>
-                    <td>0 teams</td>
+                    <td class="image"><img src="http://placeholder.pics/svg/48/DEDEDE/555555/avatar" alt="avatar"></td>
+                    <td class="name"><a href="#"> Martin Fowler</a></td>
+                    <td class="member">Member</td>
+                    <td class="team">0 teams</td>
                 </tr>
             </table>
         </div>
@@ -116,7 +143,7 @@
     <footer>
         <nav class="navigation" id="footer-left">
             <ul>
-                <li>@2018 Github, Inc.</li>
+                <li>&copy;2018 Github, Inc.</li>
                 <li><a href="#">Terms</a></li>
                 <li><a href="#">Privacy</a></li>
                 <li><a href="#">Security</a></li>
