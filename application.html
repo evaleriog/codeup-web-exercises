@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Residential Lease Application</title>
+    <style>
+        header>p{
+            float:right;
+        }
+
+        #title{
+            text-align: center;
+        }
+
+        #file{
+            float:left;
+        }
+
+        #pages{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>Recived on 09/18/2019 at 12:16pm</p>
+    </header>
+
+    <main>
+        <div id="title">
+            <img src="http://placeholder.pics/svg/40" alt="logo">
+            <p>TEXAS ASSOCIATION OF REALTORS</p>
+            <h1>Residential Lease Application</h1>
+            <p>USE OF THIS FORM BY PERSONS WHO ARE NOT MEMBERS OF THE TEXAS ASSOCIATION
+                OF REALTORS IS NOT AUTHORIZED</p>
+            <p>&copyTexas Association of REALTORS, Inc 2007</p>
+            <h3>Each occupant and co-applicant 18 years or older must submit a separate application</h3>
+            <hr>
+        </div>
+        <div id="information">
+            <form method="POST" action="https://request-inspector.glitch.me/">
+                <label for="address">Property Address</label>
+                <textarea name="address" id="address" cols="100" rows="1"></textarea>
+                <br>
+                <label>Anticipated: </label>
+                <label for="movein">Move-In Date:</label>
+                <input type="text" id="movein" name="movein">
+                <label for="monthlyrent">Monthly Rent: $</label>
+                <input type="text" id="monthlyrent" name="monthlyrent">
+                <label for="secdeposit">Security Deposit: $</label>
+                <input type="text" id="secdeposit" name="secdeposit">
+                <br><br>
+                <label for="referred">Applicant was referred to Landlord by:</label>
+                <br>
+                <input type="checkbox" id="referred" name="referred" value="real">Real estate agent
+                <input type="text" id="name" name="name" disabled>
+                <label for="name">(name)</label>
+                <input type="text" id="phone" name="phone" disabled>
+                <label for="phone">(phone)</label>
+                <br>
+                <input type="checkbox" id="newspaper" name="referred" value="newspaper">Newspaper
+                <input type="checkbox" id="sign" name="referred" value="sign">Sign
+                <input type="checkbox" id="internet" name="referred" value="internet">Internet
+                <input type="checkbox" id="other" name="referred" value="other">Other
+                <input type="text" id="ifother" name="other" disabled>
+                <br><br>
+                <label for="applicant">Applicant's name (first, middle, last)</label>
+                <textarea name="applicant" id="applicant" cols="100" rows="1"></textarea>
+                <br>
+                <label for="coapplicant">Is there a co-applicant?</label>
+                <input type="checkbox" id="coapplicant" name="coapplicant" value="yes">yes
+                <input type="checkbox" id="no" name="coapplicant" value="no">no
+                <label>if yes, co-applicant must submit a separate application</label>
+                <br>
+                <label for="formername">Applicant's former last name (maiden or married)</label>
+                <input type="text" id="formername" name="formername">
+                <br>
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email">
+                <label for="homephone">Home Phone</label>
+                <input type="text" id="homephone" name="homephone">
+                <br>
+                <label for="workphone">Work Phone</label>
+                <input type="text" id="workphone" name="workphone">
+                <label for="mobile">Mobile/Pager</label>
+                <input type="text" id="mobile" name="mobile">
+                <br>
+                <label for="ssn">Soc. Sec. No.</label>
+                <input type="text" id="ssn" name="ssn">
+                <label for="dln">Driver License No.</label>
+                <input type="text" id="dln" name="dln">
+                <label for="dlstate">in</label>
+                <input type="text" id="dlstate" name="dlstate">
+                <label >(state)</label>
+                <br>
+                <label for="dob">Date of Birth</label>
+                <input type="text" id="dob" name="dob">
+                <label for="height">Height</label>
+                <input id="height" name="height">
+                <label for="weight">Weight</label>
+                <input type="text" id="weight" name="weight">
+                <label for="eyecolor">Eye Color</label>
+                <input type="text" id="eyecolor" name="eyecolor">
+                <br>
+                <label for="haircolor">Hair Color</label>
+                <input id="haircolor" name="haircolor">
+                <label for="marital">Marital Status</label>
+                <input type="text" id="marital" name="marital">
+                <label for="citizenship">Citizenship</label>
+                <input type="text" id="citizenship" name="citizenship">
+                <label>(country)</label>
+                <br><br>
+                <label>Emergency Contact:</label>
+                <label for="emergencyname">Name:</label>
+                <input type="text" id="emergencyname" name="emergencyname">
+                <br>
+                <label for="emergencyaddress">Address:</label>
+                <input type="text" id="emergencyaddress" name="emergencyaddress">
+                <br>
+                <label for="emergencyphone">Phone:</label>
+                <input type="text" id="emergencyphone" name="emergencyphone">
+                <label for="emergencyemail">E-mail:</label>
+                <input type="text" id="emergencyemail" name="emergencyemail">
+                <br><br>
+                <label>Name all other persons who will occupy the Property:</label>
+                <br>
+                <label for="othername1">Name:</label>
+                <input type="text" id="othername1" name="othername1">
+                <label for="otherrelationship1">Relationship:</label>
+                <input type="text" id="otherrelationship1" name="otherrelationship1">
+                <label for="otherage1">Age:</label>
+                <input type="text" id="otherage1" name="otherage1">
+                <br>
+                <label for="othername2">Name:</label>
+                <input type="text" id="othername2" name="othername2">
+                <label for="otherrelationship2">Relationship:</label>
+                <input type="text" id="otherrelationship2" name="otherrelationship2">
+                <label for="otherage2">Age:</label>
+                <input type="text" id="otherage2" name="otherage2">
+                <br>
+                <label for="othername3">Name:</label>
+                <input type="text" id="othername3" name="othername3">
+                <label for="otherrelationship3">Relationship:</label>
+                <input type="text" id="otherrelationship3" name="otherrelationship3">
+                <label for="otherage3">Age:</label>
+                <input type="text" id="otherage3" name="otherage3">
+                <br>
+                <label for="othername4">Name:</label>
+                <input type="text" id="othername4" name="othername4">
+                <label for="otherrelationship4">Relationship:</label>
+                <input type="text" id="otherrelationship4" name="otherrelationship4">
+                <label for="otherage4">Age:</label>
+                <input type="text" id="otherage4" name="otherage4">
+                <br><br>
+                <label for="applicantaddress">Applicant's Current Address</label>
+                <input type="text" id="applicantaddress" name="applicantaddress">
+                <label for="applicantapt">Apt. No.</label>
+                <input type="text" id="applicantapt" name="applicantapt">
+                <br>
+                <input type="text" id="applicantcitystzip" name="applicantcitystzip">
+                <label for="applicantcitystzip">(city, state, zip)</label>
+                <br>
+                <label for="landlord">Landlord's Name:</label>
+                <input type="text" id="landlord" name="landlord">
+                <label for="landemail">Email:</label>
+                <input type="text" id="landemail" name="landemail">
+                <br>
+                <label>Phone: </label>
+                <label for="landdayphone">Day:</label>
+                <input type="text" id="landdayphone" name="landdayphone">
+                <label for="landnightphone">Nt:</label>
+                <input type="text" id="landnightphone" name="landnightphone">
+                <label for="landmobile">Mb:</label>
+                <input type="text" id="landmobile" name="landmobile">
+                <label for="landfax">Fax:</label>
+                <input type="text" id="landfax" name="landfax">
+                <br>
+                <label for="currentmovein">Date Move-In</label>
+                <input type="text" id="currentmovein" name="currentmovein">
+                <label for="currentmoveout">Move-Out Date:</label>
+                <input type="text" id="currentmoveout" name="currentmoveout">
+                <label for="currentrent">Rent $</label>
+                <input type="text" id="currentrent" name="currentrent">
+                <br>
+                <label for="currentreason">Reason for move:</label>
+                <input type="text" id="currentreason" name="currentreason">
+                <br><br>
+                <!-- This is to stop after this  -->
+                <label for="previousapplicantaddress">Applicant's Previous Address</label>
+                <input type="text" id="previousapplicantaddress" name="previousapplicantaddress">
+                <label for="previousapplicantapt">Apt. No.</label>
+                <input type="text" id="previousapplicantapt" name="previousapplicantapt">
+                <br>
+                <input type="text" id="previousapplicantcitystzip" name="previousapplicantcitystzip">
+                <label for="previousapplicantcitystzip">(city, state, zip)</label>
+                <br>
+                <label for="previouslandlord"> Previous Landlord's Name:</label>
+                <input type="text" id="previouslandlord" name="previouslandlord">
+                <label for="previouslandemail">Email:</label>
+                <input type="text" id="previouslandemail" name="previouslandemail">
+                <br>
+                <label>Phone: </label>
+                <label for="previouslanddayphone">Day:</label>
+                <input type="text" id="previouslanddayphone" name="previouslanddayphone">
+                <label for="previouslandnightphone">Nt:</label>
+                <input type="text" id="previouslandnightphone" name="previouslandnightphone">
+                <label for="previouslandmobile">Mb:</label>
+                <input type="text" id="previouslandmobile" name="previouslandmobile">
+                <label for="previouslandfax">Fax:</label>
+                <input type="text" id="previouslandfax" name="previouslandfax">
+                <br>
+                <label for="previouscurrentmovein">Date Move-In</label>
+                <input type="text" id="previouscurrentmovein" name="previouscurrentmovein">
+                <label for="previouscurrentmoveout">Move-Out Date:</label>
+                <input type="text" id="previouscurrentmoveout" name="previouscurrentmoveout">
+                <label for="previouscurrentrent">Rent $</label>
+                <input type="text" id="previouscurrentrent" name="previouscurrentrent">
+                <br>
+                <label for="previouscurrentreason">Reason for move:</label>
+                <input type="text" id="previouscurrentreason" name="previouscurrentreason">
+                <br><br>
+                <label for="employer">Applicant's Current Employer</label>
+                <input id="employer" name="employer">
+                <br>
+                <label for="employeraddress">Address:</label>
+                <input type="text" id="employeraddress" name="employeraddress">
+                <label>(street, city, state, zip)</label>
+                <br>
+                <label for="supervisor">Supervisor's Name:</label>
+                <input type="text" id="supervisor" name="supervisor">
+                <label for="supervisorphone">Phone:</label>
+                <input type="text" id="supervisorphone" name="supervisorphone">
+                <label for="supervisorfax">Fax:</label>
+                <input type="text" id="supervisorfax" name="supervisorfax">
+                <br>
+                <label for="supervisoremail">E-mail:</label>
+                <input type="text" id="supervisoremail" name="supervisoremail">
+                <br>
+                <label for="startdate">Start Date:</label>
+                <input type="text" id="startdate" name="startdate">
+                <label for="grossincome">Gross Monthly Income: $</label>
+                <input type="text" id="grossincome" name="grossincome">
+                <label for="position">Position:</label>
+                <input type="text" id="position" name="position">
+                <br><br>
+                <button type="submit">Submit Form</button>
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <p id="file">(TAR-2003) 10-16-07</p>
+        <p id="pages">Page 1 of 4</p>
+    </footer>
+</body>
+</html>
