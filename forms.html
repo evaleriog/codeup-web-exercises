@@ -8,22 +8,31 @@
     <form method="POST" action="https://request-inspector.glitch.me/">
         <label for="email">Email</label>
         <input type="text" id="email" name="email" placeholder="Enter your email">
+        <br><br>
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Enter your password">
+        <br><br>
         <label for="bio">Bio</label>
-        <textarea id="bio" name="bio"></textarea>
+        <br>
+        <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+        <br><br>
         <label for="hear">How did you hear about us?</label>
-        Billboard<input type="radio" name="hear" value="billboard">
-        Radio Advertisement<input type="radio" name="hear" value="radio advertisement">
-        Internet Advertisement<input type="radio" name="hear" value="internet advertisement">
-        Other<input type="radio" name="hear" value="other">
+        <br>
+        Billboard<input type="radio" name="hear" id="hear" value="billboard" checked>
+        <br>
+        Radio Advertisement<input type="radio" name="hear" id="hear" value="radio advertisement">
+        <br>
+        Internet Advertisement<input type="radio" name="hear" id="hear" value="internet advertisement">
+        <br>
+        Other<input type="radio" name="hear" value="other" id="hear">
+        <br><br>
         <label for="browser">What Web Browser are you using?</label>
-        <select name="browser">
+        <select name="browser" id="browser">
             <option value="mozilla">Mozilla</option>
             <option value="chrome">Chrome</option>
-            <option value="safari">Safari</option>
+            <option value="safari" selected>Safari</option>
         </select>
-
+        <br><br>
         <input type="submit">
     </form>
 </body>
