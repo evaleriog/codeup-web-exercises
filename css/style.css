@@ -1,4 +1,106 @@
-.fancy-header {
-    color: purple; /* single line comment */
+#heading{
+    text-align: center;
+}
+
+#heading p{
+    color: white;
+}
+
+h1{
+    font-weight: bold;
+    background-color: royalblue;
+    padding:20px 10px;
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+
+h3{
+    color:red;
     text-decoration: underline;
+}
+
+body {
+    /*background-color: lightskyblue;*/
+    background-image: url("../img/background3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Coustard', serif;
+}
+
+#container{
+    margin:auto;
+    background: rgba(236, 236, 236, 0.4);
+    width:85%;
+}
+
+.body{
+    padding-left: 20px;
+}
+
+ul{
+    list-style: square;
+}
+
+table{
+    background-color: white;
+    border: solid 3px black;
+    border-collapse: collapse;
+}
+
+td, th{
+    border: solid 1px black;
+    padding: 10px;
+}
+
+th{
+    background-color: dodgerblue;
+}
+
+table:hover{
+    font-size: 1.2em;
+}
+
+th:hover{
+    background-color: red;
+}
+
+td:hover{
+    background-color: gray;
+}
+
+a{
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover{
+    color:crimson;
+    text-decoration: underline;
+}
+
+#pic-left{
+    float: left;
+}
+
+#pic-right{
+    float: left;
+}
+
+#product{
+    clear: both;
+}
+
+.body img{
+    /*border-left: solid 3px red;
+    border-bottom: solid 3px red;*/
+    box-shadow: 7px 10px cornflowerblue;
+    margin-left: 25px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+}
+
+hr{
+    border: solid 5px white;
+    border-radius: 5px;
 }
