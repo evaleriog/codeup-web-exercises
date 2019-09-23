@@ -1,0 +1,49 @@
+:root{
+    /*variables for information message */
+    --bg-info: #CCDEFE;
+    --text-info: #6A6AB5;
+    /*variables for success message */
+    --bg-success:#CEF3DB;
+    --text-success:#378C5F;
+    /*variables for warning message*/
+    --bg-warning:#FCFBCC;
+    --text-warning:#A1903C;
+    /*variables for error message*/
+    --bg-error:#FBD3D7;
+    --text-error:#9B3C51;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message{
+    margin: 10px;
+    padding: 10px;
+    border: 1px lightgrey;
+    border-radius: 5px;
+}
+
+.message-info{
+    background-color: var(--bg-info) ;
+    color: var(--text-info);
+}
+
+.message-success{
+    background-color:var(--bg-success) ;
+    color:var(--text-success) ;
+}
+
+.message-warning{
+    background-color:var(--bg-warning) ;
+    color: var(--text-warning);
+}
+
+.message-error{
+    background-color: var(--bg-error);
+    color:var(--text-error);
+}
