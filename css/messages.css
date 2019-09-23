@@ -22,10 +22,11 @@ body, html {
 }
 
 .message{
-    margin: 10px;
+    margin: 10px auto;
     padding: 10px;
     border: 1px lightgrey;
     border-radius: 5px;
+    width: 80%;
 }
 
 .message-info{
