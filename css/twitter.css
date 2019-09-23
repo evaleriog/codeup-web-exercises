@@ -1,0 +1,150 @@
+:root {
+    --main-bg: #E6ECF0;
+    --link-color: #3B94D9;
+    --main-link-color: #848487;
+    --light-bg: #FFF;
+    --separator-color: #DDD;
+}
+* {
+    box-sizing: border-box;
+}
+body, html {
+    background-color: var(--main-bg);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+header {
+    background-image: url("https://loremflickr.com/1200/300");
+    background-size: cover;
+    min-height: 300px;
+    padding-top: 275px;
+}
+a {
+    color: var(--link-color);
+}
+.top-nav {
+    background: var(--light-bg);
+    /*Makes the navigation fixed with 100% width*/
+    width: 100%;
+    position: fixed;
+    /*to avoid the avatar to appear on top of the main navigation when scrolling down*/
+    z-index: 1000;
+}
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*Makes the top navigation horizontally inline with some padding*/
+.nav-item{
+    display: inline-block;
+    padding: 1.5em;
+}
+.nav-link {
+    color: var(--main-link-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+.nav-link:hover {
+    color: var(--link-color);
+}
+.profile {
+    background: var(--light-bg);
+    height: 80px;
+}
+
+/*floating the Edit Profile button into the right and center its on the div*/
+.profile-form{
+    float: right;
+    line-height: 80px;
+}
+/*positions the profile image (avatar) in between the divs*/
+.profile-image{
+    position: absolute;
+    top:240px;
+}
+
+/*remove bullets and padding from profile-items*/
+.profile-items{
+    padding: 0;
+    list-style: none;
+}
+
+/*adds a margin to the profile-entry*/
+.profile-entry{
+    margin: .5em;
+}
+
+.btn {
+    border: 1px solid var(--main-link-color);
+    color: var(--main-link-color);
+    background: var(--light-bg);
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+}
+.btn-large {
+    font-size: 1.3em;
+    padding: 10px;
+}
+.img-circle {
+    border-radius: 100%;
+    border: 4px solid var(--light-bg);
+}
+.text-right {
+    text-align: right;
+}
+.text-muted {
+    color: var(--main-link-color);
+}
+
+/*Creates the 3 columsn with content*/
+.profile-details{
+    width: calc(25% - 1em);
+    float: left;
+    margin: 0 .5em;
+}
+
+.timeline{
+    width:calc(50% - 1em);
+    float: left;
+    margin: 0 .5em;
+}
+
+.who-to-follow{
+    width: calc(25% - 1em);
+    float: left;
+    margin: 0 .5em;
+}
+
+/*give space between avatar and 3 columns*/
+.container{
+    margin-top: 2em;
+}
+
+/*change the appearance of the media selector*/
+.media{
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    padding: .5em;
+    overflow: auto;
+}
+
+/*set limits on the media image and floating on left of the comments*/
+.media-image{
+    max-width: 50px;
+    margin-top: 1.33em;
+    float: left;
+}
+
+/*makes content to the right of the image using the rest of the space horizontally*/
+.media-body{
+    float: right;
+    width: calc(100% - 50px);
+}
+
