@@ -65,6 +65,7 @@ a {
     border-radius: 4px;
 }
 
+/*Displays cards in a row*/
 .container {
     /* This is a flex container */
     display: flex;
@@ -72,6 +73,7 @@ a {
     align-items: center;
 }
 
+/*Displays content on card in a column*/
 .card {
     /* This is a flex item */
     display: flex;
