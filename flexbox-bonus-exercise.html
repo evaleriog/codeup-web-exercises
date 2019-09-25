@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <title>Flexbox Bonus Exercise</title>
     <script src="https://kit.fontawesome.com/317175159f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
     <style>
+
+        /*Set the whole container inside footer to a background of black and sets a font-family*/
         .container{
             background-color: black;
+            font-family: 'Roboto Slab', serif;
         }
 
+        /*class used to set the font color inside upper footer*/
+        .gray-text{
+            color: darkgray;
+        }
+
+        /*sets the remainder of the upper footer to font white color. sets up a flex container to position the 3
+        elements in a row*/
         .upper-footer{
             color: white;
             display: flex;
@@ -16,22 +27,103 @@
             justify-content: space-evenly;
         }
 
+        /*sets a flex inside the container flex to arrange the map items in a column*/
         .map{
-             color: white;
-             padding: 1em;
+            color: white;
+            padding: 1em;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
          }
 
+        /*sets a flex inside the container flex to arrange the hello items in a column*/
+        .hello{
+            padding: 1em;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*Sets the email section to bold*/
+        .hello p:nth-child(3){
+            font-weight: bold;
+        }
+
+        /*sets a flex inside the container flex to arrange the subscribe items in a column*/
+        .subscribe{
+            padding: 1em;
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /*styles the input box for email*/
+        .subscribe input{
+            border-radius: 25px;
+            padding: 1.2em;
+            border: 1px solid darkgrey;
+            background: black;
+            color: #E6ECF0;
+            align-self: stretch;
+        }
+
+        /*Styles the button submit*/
+        .subscribe button{
+            border-radius: 35px;
+            padding: 1.2em;
+            background: gainsboro;
+            color: white;
+            align-self: flex-start;
+        }
+
+        /*Styles the button submit on hover*/
+        .subscribe button:hover{
+            border-radius: 35px;
+            padding: 1.2em;
+            background: #3B94D9;
+            color: white;
+        }
+
+        /*creates a flex for the unordered list to display list items in a row*/
+        .subscribe ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-inline-start: 0;
+            padding: 1.2em 0;
+        }
+
+        .subscribe ul li{
+            margin: 0;
+            display: inline-block;
+            text-decoration: none;
+            padding-right: 1em;
+        }
+
+        .subscribe ul li a{
+            color: darkgray;
+        }
+
+        .subscribe ul li a:hover{
+            color: blue;
+        }
+
+        /*creates a separator line between upper and lower footer*/
         .line{
             width: 100%;
             height: 1px;
             background: grey;
         }
+
+        /*sets a different backgroung for bottom footer*/
         .bottom-footer{
             background-color: #333333;
             padding: 1em 1em 1em 0;
             margin: 0;
         }
 
+        /*created a flex for the unordered list items*/
         .bottom-footer ul{
             display: flex;
             flex-direction: row;
@@ -53,8 +145,12 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        /*Sets the copyright element to the right side of bottom footer*/
         #copyright{
+            padding-right: 1em;
             margin-left: auto;
+            margin-right: 2em;
         }
 
     </style>
@@ -64,31 +160,32 @@
         <div class="container">
             <section class="upper-footer">
                 <div class="map">
-                    <h6>OUR OFFICE</h6>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3475.0712486114276!2d-98.49178702062015!3d29.426713954530957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c5f53ae9da8c7%3A0xfdc2b9d926713c13!2sCodeup!5e0!3m2!1sen!2sus!4v1569362842383!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                    <p>t: 123 456 789</p>
-                    <p>1234 Main Street Anywhere</p>
+                    <h5>OUR OFFICE</h5>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3475.0712486144125!2d-98.49179238522973!3d29.426713954443706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c5f53ae9da8c7%3A0xfdc2b9d926713c13!2sCodeup!5e0!3m2!1sen!2sus!4v1569427095802!5m2!1sen!2sus" width="350" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    <div class="box"></div>
+                    <p class="gray-text">t: 123 456 789</p>
+                    <p class="gray-text">1234 Main Street Anywhere</p>
                 </div>
 
-                <div>
+                <div class="hello">
                     <h5>SAY HELLO</h5>
-                    <p>
+                    <p class="gray-text">
                         If you are interested in working with us or<br>
                         just want to say hello simply from us a line!
                     </p>
                     <p>sayhi@baamboostudio.com</p>
                 </div>
 
-                <div>
+                <div class="subscribe">
                     <h5>SUBSCRIBE US</h5>
                     <ul>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-dropbox"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fab fa-spotify"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
                     </ul>
                     <input type="text" id="email" name="email" placeholder="YOUR EMAIL">
                     <br>
