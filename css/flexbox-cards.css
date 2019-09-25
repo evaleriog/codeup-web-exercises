@@ -76,6 +76,5 @@ a {
 /*Displays content on card in a column*/
 .card {
     /* This is a flex item */
-    display: flex;
-    flex-direction: column;
+    flex-basis: 100%;
 }

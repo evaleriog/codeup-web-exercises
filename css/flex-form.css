@@ -62,9 +62,8 @@ body {
     /* flex items */
     display: flex;
     align-items: stretch;
-}
 .destination {
     /* bigger item */
     /*Displays the whole placeholder */
-    flex-basis: 40%;
+    flex-basis: 30%;
 }
