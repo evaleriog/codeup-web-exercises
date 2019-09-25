@@ -6,6 +6,8 @@ body{
     margin: 0;
 }
 
+/*Section to create background and width to the whole screen, also makes navigation
+position relative to be able to set logo to absolute position*/
 nav{
     background: #C1C1C1;
     position: relative;
@@ -16,9 +18,11 @@ ul{
     list-style: none;
     padding: 1.2em;
     margin: 0;
+    width: 100%;
+    /*This creates a flex on the list to align items*/
     display: flex;
     align-items: center;
-    width: 100%;
+    justify-content: space-around;
 }
 
 nav a{
@@ -34,6 +38,7 @@ nav a:hover{
     color: blue;
 }
 
+/*Section for the Logo to be centered in an absolute position*/
 ul li:nth-child(5){
     font-size: 3em;
     font-family: 'Montserrat', sans-serif;
@@ -44,10 +49,12 @@ ul li:nth-child(5){
     right: 40%;
 }
 
+/*Section to push first 4 elements to the left*/
 ul li:nth-child(4){
     margin-right: auto;
 }
 
+/*Section to push last 4 elements to the right*/
 ul li:nth-child(6){
     margin-left:auto;
 }
