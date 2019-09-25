@@ -65,6 +65,6 @@ body {
 }
 .destination {
     /* bigger item */
+    /*Displays the whole placeholder */
     flex-basis: 40%;
-
 }
