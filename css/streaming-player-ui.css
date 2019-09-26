@@ -19,7 +19,7 @@ body {
     grid-gap: 1em;
     /* no row properties are needed */
     /* TODO: the height of the wrapper should be 100 viewport height units */
-    height: 100vm;
+    height: 100vh;
 }
 
 ul {
