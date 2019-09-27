@@ -1,0 +1,226 @@
+*{
+    /*background: #0fb784;*/
+    --black-bgd:#24292E;
+}
+
+#container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+
+/*Code to style the navigation bar at the top opf the site*/
+#container nav {
+    background: var(--black-bgd);
+    grid-area: 1 / 1 / 2 / -1;
+}
+
+#container nav ul{
+    background: var(--black-bgd);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-inline-start: 0;
+}
+
+#container nav ul li{
+    background: var(--black-bgd);
+    display: inline-block;
+    padding: 0 1em;
+}
+
+#container nav ul li:nth-child(7){
+     margin-left: auto;
+}
+
+#container nav ul li input{
+    padding: 0.5em;
+    border-radius: 5%;
+    border:none;
+    background: #3F4347;
+    color: lightgray;
+    flex-grow: 1;
+}
+
+#container nav ul a{
+    color: white;
+    text-decoration: none;
+}
+
+#container nav ul a:hover{
+    color: lightgray;
+    text-decoration: none;
+}
+/*Code for the header part of the container*/
+#container header{
+    background: #3B94D9;
+    height: 400px;
+    grid-area: 2 / 1 / span 5 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*code for the main area of the container*/
+#container main {
+    grid-area: 7 / 1 / span 8 / -1;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+
+#toper{
+    grid-area: 1 / 1 / 2 / -1;
+    background-color: #FAFBFC;
+    display: grid;
+    grid-template: 1fr 1fr / 10% 40% 40% 10%;
+}
+
+#directory{
+    grid-area: 1 / 2 / 2 / 3;
+    color:#848A91;
+}
+
+#directory a{
+    color: blue;
+    text-decoration: none;
+}
+
+#directory a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+#menu{
+    grid-area: 2 / 2 / 3 / -2;
+    display: flex;
+    padding-inline-start: 0;
+    list-style: none;
+    margin: 0;
+}
+#menu li{
+    margin: 0;
+    padding: 0.5em;
+    align-items: center;
+    color: #848A91;
+}
+
+#menu a{
+    text-decoration: none;
+    color: #848A91;
+    margin-left: 5px;
+}
+
+#menu a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+
+#selected{
+    background: white;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-top: 2px solid orangered;
+}
+
+#second-menu{
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    padding-inline-start: 0;
+    list-style: none;
+    justify-content: flex-end;
+}
+
+#second-menu li{
+    border: 1px solid lightgray;
+    background: #F8F9FB;
+    padding: 0.5em;
+}
+
+#second-menu li:hover{
+    border: 1px solid lightgray;
+    background: #EDF1F5;
+    padding: 0.5em;
+}
+
+#second-menu a{
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding-right: 0.5em;
+}
+
+#second-menu a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+#files{
+    grid-area: 2 / 2 / 7 / -2;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+#files p{
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#files ul{
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    padding-inline-start: 0;
+    list-style: none;
+    justify-content: flex-end;
+}
+
+#files table{
+    grid-area: 2 / 1 / 2 / -1;
+}
+
+
+
+#readme{
+    grid-area: 7 / 2 / 10 / -2;
+}
+
+/*Code for footer*/
+#container footer{
+    grid-area: 15 / 2 / 18 / -2;
+    border-top: 1px solid lightgray;
+}
+
+#container footer ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline-start: 0;
+}
+
+#container footer ul li{
+    display: inline-block;
+    padding: 0.5em;
+}
+
+#container footer ul li:nth-child(7){
+    margin: auto;
+}
+
+#container footer ul li a:nth-child(7){
+    color: lightgray;
+}
+
+#container footer ul li a:nth-child(7):hover{
+    color: dimgray;
+}
+
+#container footer ul li a{
+    text-decoration: none;
+    color: blue;
+}
+
+#container footer ul li a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+
