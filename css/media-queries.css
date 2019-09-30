@@ -1,44 +1,140 @@
-/*For Desktop Layout*/
+/*Default on mobile*/
+body{
+    display: grid;
+    grid-template: repeat(7, auto) / 339px;
+    grid-row-gap: 1em;
+    font-family: 'Roboto Condensed', sans-serif;
+    background: aliceblue;
+}
+
+.hidden-on-desktop{
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.hidden-on-desktop a{
+    display: block;
+    padding: 1em;
+    text-align: center;
+    background: #3B94D9;
+    text-decoration: none;
+    color: white;
+}
+
+h1{
+    grid-area: 2 / 1 / 3 / 2;
+    text-align: center;
+}
+
+nav{
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+nav ul{
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin: 0;
+}
+
+nav ul a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background: #DDDDDD;
+    border: 1px solid black;
+    padding: 1em;
+    margin-bottom: 0.5em;
+}
+
+.header-img{
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+.header-img img{
+    width: 339px;
+    height: 224px;
+}
+
+.main{
+    grid-area: 5 / 1 / 6 / 2;
+}
+
+.sub-section{
+    grid-area: 6 / 1 / 7 / 2;
+    font-size: 0.7em;
+}
+
+.main, .sub-section{
+    padding-top: 0.7em;
+    border-top: 3px solid orangered;
+}
+
+footer{
+    grid-area: 7 / 1 / 8 / 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer ul a{
+    display: flex;
+    padding: 0.5em;
+    text-decoration: none;
+    color: #848487;
+}
+
+body{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Breakpoint for bigger screens*/
 @media screen and (min-width: 769px){
     body{
-        background: #cbffcd;
+        background: ghostwhite;
         display: grid;
-        grid-template: 1fr 2fr 2fr 1fr/ repeat(3, calc(890px /3));
-        grid-row-gap: 1em;
-    }
-
-    .hidden-on-desktop{
-        grid-area: 2 / 1 / 3 / 4;
-        z-index: -1; /*To hid the a tag when browser is in desktop mode*/
+        grid-template: repeat(4, auto) / repeat(3, calc(890px /3));
+        grid-row-gap: 2em;
     }
 
     h1{
         grid-area: 1 / 1 / 2 / 2;
         display: flex;
         align-items: center;
+        justify-content: flex-start;
     }
 
     nav{
-        grid-area: 1 / 2 / 2 / 4;
+        grid-area: 1 / 3 / 2 / 4;
+    }
+
+    nav ul{
         display: flex;
         justify-content: flex-end;
     }
 
-    .nav-links{
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        list-style-type: none;
+    nav ul a{
+        border: none;
+        background-color: unset;
+        color:blue;
     }
 
-    .nav-links a{
-        text-decoration: none;
-        margin-left: 1em;
+    nav ul a:hover{
+        border: 1px solid lightgray;
+        background-color: #3B94D9;
+        color: white;
     }
 
-    .nav-links a:hover{
-        text-decoration: underline;
-        margin-left: 1em;
+    .hidden-on-desktop{
+        grid-area: 2 / 2 / 3 / 3;
+        z-index: -1;
     }
 
     .header-img{
@@ -48,9 +144,10 @@
     .header-img img{
         width: 890px;
         height: 385px;
+        box-shadow: 5px 10px 2px rgba(255,69,0, 0.5);
     }
 
-    .main{
+    .main {
         grid-area: 3 / 1 / 4 / 3;
     }
 
@@ -58,145 +155,26 @@
         grid-area: 3 / 3 / 4 / 4;
     }
 
+    .main, .sub-section{
+        padding-left: 1em;
+        border-left: 3px solid orangered;
+        padding-top: 0;
+        border-top: unset;
+    }
+
     footer{
         grid-area: 4 / 1 / 5 / 4;
     }
 
+    footer ul li a:hover{
+        color: #3B94D9;
+    }
+
+}
+
+/*
+@media screen and (min-width: 1200px){
     body{
-        display: grid;
-        align-items: center;
-        justify-content: center;
+        background-color: #3B94D9;
     }
-}
-
-/*For mobile layout*/
-@media screen and (max-width: 768px){
-    body{
-        background: #3B94D9;
-        display: grid;
-        grid-template: repeat(7, auto) / 339px;
-        grid-row-gap: 1em;
-    }
-
-    .alert-info{
-        z-index: 1;
-        grid-area: 1 / 1 / 2 / 2;
-        margin-top: 0.5em;
-    }
-
-    .hidden-on-desktop{
-        border: 1px solid black;
-        text-align: center;
-
-    }
-
-    .hidden-on-desktop a{
-        text-decoration: none;
-        color: black;
-        display: block;
-        padding: 1em;
-        background: #cbffcd;
-    }
-
-    .hidden-on-desktop a:hover{
-        text-decoration: none;
-        color: white;
-        display: block;
-        padding: 1em;
-        background: #848487;
-    }
-
-    h1{
-        grid-area: 2 / 1 / 3 / 2;
-        text-align: center;
-    }
-
-    nav{
-        grid-area: 3 / 1 / 4 / 2;
-    }
-
-    .nav-links{
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .nav-links a{
-        display: block;
-        border: 1px solid black;
-        padding: 1em;
-        margin-bottom: 0.5em;
-        text-decoration: none;
-        color: black;
-        background: #DDDDDD;
-        text-align: center;
-    }
-
-    .nav-links a:hover{
-        display: block;
-        border: 1px solid black;
-        padding: 1em;
-        margin-bottom: 0.5em;
-        text-decoration: none;
-        color: white;
-        background: #848487;
-        text-align: center;
-    }
-
-    .header-img{
-        grid-area: 4 / 1 / 5 / 2;
-    }
-
-    .header-img img{
-        width: 339px;
-        height: 224px;
-    }
-
-    .main{
-        grid-area: 5 / 1 / 6 / 2;
-    }
-
-    .sub-section{
-        grid-area: 6 / 1 / 7 / 2;
-    }
-
-    footer{
-        grid-area: 7 / 1 / 8 / 2;
-    }
-
-    body{
-        display: grid;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-body{
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
-footer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#social-media-links ul{
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-}
-
-#social-media-links il li{
-    display: block;
-}
-
-#social-media-links ul li a{
-    color: #DDDDDD;
-    padding: 1em;
-}
-
-#social-media-links ul li a:hover{
-    color: #848487;
-    padding: 1em;
-}
+}*/
