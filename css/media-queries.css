@@ -134,7 +134,8 @@ body{
 
     .hidden-on-desktop{
         grid-area: 2 / 2 / 3 / 3;
-        z-index: -1;
+        /*z-index: -1;*/
+        display: none;
     }
 
     .header-img{
