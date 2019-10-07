@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 3</title>
+</head>
+<body>
+    <script>
+        var littleMermaid = 3;
+        var brotherBear = 5;
+        var hercules = 1;
+        var moviePerDay = 3;
+
+        var totalRent = (littleMermaid + brotherBear + hercules) * moviePerDay;
+
+        console.log("Total rent is " + totalRent);
+
+        var google = 400;
+        var amazon = 380;
+        var facebook = 350;
+
+        var totalGoogle = 6 * google;
+        var totalAmazon = 4 * amazon;
+        var totalFacebook = 10 * facebook;
+        var totalPayment = totalGoogle + totalAmazon + totalFacebook;
+
+        console.log("Total payment is " + totalPayment);
+
+/*        var classTime = "9AM";
+        var classSize = 125;
+        var currClassSize = 108;
+        var studentClassTime = "9AM";
+        var studentCanSignUp = currClassSize < classSize && studentClassTime != classTime; */
+
+        var student = "not enrolled";
+        var class1 = "Monday";
+        var class2 = "Wednesday";
+        var availableClass = "Friday";
+
+        if ((class1 != availableClass) && (class2 != availableClass)){
+            student = "enrolled";
+        }
+
+        console.log("Student is " + student + " in class");
+
+        var premium = false;
+        var personItems = 4;
+        var productOfferExpired = false;
+        var canBeApplied = true;
+
+        if (((premium === true) && (productOfferExpired === false)) || ((personItems > 2) && (productOfferExpired === false))){
+            canBeApplied = true;
+        }
+        else {
+            canBeApplied = false;
+        }
+
+        console.log("The product offer is " + canBeApplied);
+    </script>
+
+</body>
+</html>

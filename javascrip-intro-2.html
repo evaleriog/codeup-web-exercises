@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 4</title>
+</head>
+<body>
+    <script>
+        var username = 'codeup';
+        var password = 'notastrongpassword';
+
+        var passFiveChars = password.length >= 5;
+        console.log(passFiveChars);
+
+        var usernameNotincluded = password.indexOf(username) === -1;
+        console.log(usernameNotincluded);
+
+        var usernameLessTwenty = username.length <= 20;
+        console.log(usernameLessTwenty);
+
+        var hasEmptySpaces = (username.indexOf(" ") === 0 || username.indexOf(" ") === username.length -1) ||
+                            (password.indexOf(" ") === 0 || password.indexOf(" ") === password.length -1);
+      // hasEmptySpaces = username === username.trim() && password === password.trim();
+        console.log(hasEmptySpaces);
+    </script>
+</body>
+</html>
