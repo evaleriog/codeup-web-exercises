@@ -54,7 +54,7 @@ function isTwo(number){
   return number === 2;
 }
 
-console.log("my number is: " + random + " " + isTwo(random));
+console.log("my number is: " + random + ", " + isTwo(random));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -80,8 +80,8 @@ console.log(calculateTip(0.15, 33.42));
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-var percentage = prompt("What percentage would like to tip?");
-var bill = prompt("What is thew total amount of the bill?");
+var percentage = parseFloat(prompt("What percentage would like to tip?"));
+var bill = parseInt(prompt("What is thew total amount of the bill?"));
 alert("The tip you should leave based on your bill is $" + calculateTip(percentage, bill) + ".");
 
 /**
