@@ -81,7 +81,7 @@ console.log(calculateTip(0.15, 33.42));
  * then display the dollar amount they should tip
  */
 var percentage = parseFloat(prompt("What percentage would like to tip?"));
-var bill = parseInt(prompt("What is thew total amount of the bill?"));
+var bill = parseFloat(prompt("What is thew total amount of the bill?"));
 alert("The tip you should leave based on your bill is $" + calculateTip(percentage, bill) + ".");
 
 /**
