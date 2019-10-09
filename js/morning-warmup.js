@@ -112,3 +112,12 @@ function greaterFive(){
 }
 
 console.log("The number being greater than five is " + greaterFive());
+
+//Function that returns the message "Hello there, stranger" with the option fore the user to input a string to
+//replace stranger
+function sayHello(name = "stranger"){
+    return "Hello there, " + name + ".";
+}
+
+var promptName = prompt("Enter a name:");
+alert(sayHello(promptName));
