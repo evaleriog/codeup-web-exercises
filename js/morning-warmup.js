@@ -121,3 +121,10 @@ function sayHello(name = "stranger"){
 
 var promptName = prompt("Enter a name:");
 alert(sayHello(promptName));
+
+//function that accepts and array and returns the length of that array
+function arrayLength(array){
+    return array.length;
+}
+
+console.log(arrayLength([1, 2, 3, 4, 5]));
