@@ -128,3 +128,17 @@ function arrayLength(array){
 }
 
 console.log(arrayLength([1, 2, 3, 4, 5]));
+
+//Morning warmup 10/11/19. write a function that returns the quotients of two numbers
+//but only when passes two nkumbers, it should return false if only one
+
+function quotient(num1, num2) {
+    if(typeof num1 === "number" && typeof num2 === "number"){
+        return num1 / num2;
+    }
+    else{
+        return false;
+    }
+}
+
+console.log(quotient(8,"80"));
