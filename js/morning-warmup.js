@@ -142,3 +142,12 @@ function quotient(num1, num2) {
 }
 
 console.log(quotient(8,"80"));
+
+//Morning warmup, function that takes in an array that has a length of 5. console log each element of the array.
+function printArray(array){
+    for(var x = 0; x < array.length; x++){
+        console.log(array[x]);
+    }
+}
+
+printArray(["eduardo", "hello", "codeup", "class", "coding"]);
