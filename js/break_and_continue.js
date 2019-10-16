@@ -17,7 +17,7 @@ while(number){
 }
 
 // Use a loop and the continue statement to output all the odd numbers
-// between 1 and 50, except for the number the user entered.
+// between 1 and 50, except for the number the user entered.git
 
 for(var x = 0; x <= 50; x++){
     if(x % 2 !== 0){
