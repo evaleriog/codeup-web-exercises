@@ -143,6 +143,7 @@ function quotient(num1, num2) {
 
 console.log(quotient(8,"80"));
 
+
 //Morning warmup, function that takes in an array that has a length of 5. console log each element of the array.
 function printArray(array){
     for(var x = 0; x < array.length; x++){
@@ -151,3 +152,15 @@ function printArray(array){
 }
 
 printArray(["eduardo", "hello", "codeup", "class", "coding"]);
+
+//morning warmup, function that takes in an input and returns true if the input is a string, at least 8 characters in
+//length, it should return false for all other input
+
+function isAString(string){
+    if(typeof string === "string" & string.length >= 8){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
