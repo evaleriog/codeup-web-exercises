@@ -28,7 +28,7 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
     person.sayHello = function () {
-        return "Hello from Eduado Valerio";
+        return "Hello from " + this.firstName + " " + this.lastName;
     };
 
     console.log(person.sayHello());
@@ -172,6 +172,7 @@
     }
 
     var myBooks = [];
+
     myBooks.push(createBook("It", "Stephen King"));
     myBooks.push(createBook("To Kill a Mockingbird", "Harper Lee"));
     myBooks.push(createBook("Pride and Prejudice", "Jane Austen"));
@@ -189,5 +190,16 @@
     }
 
     showBookInfo(myBooks);
+
+    //different approach
+
+    // myBooks.forEach(showBookInfo);
+    //
+    // function showBookInfo(book, index) {
+    //     console.log("Book # " + (index + 1));
+    //     console.log("Title: " + book.title);
+    //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    //     console.log("--------------------------------");
+    // }
 
 })();
