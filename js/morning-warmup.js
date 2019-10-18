@@ -164,3 +164,20 @@ function isAString(string){
         return false;
     }
 }
+
+//function that takes in a floating point number, and returns a number rounded down. it should return false for
+// all inputs that aren't numbers
+
+function roundedFloating(number){
+    if(typeof number === "number" && !isNaN(number)){
+        return Math.floor(parseFloat(number));
+    }else {
+        return false;
+    }
+}
+
+console.log(roundedFloating("45"));
+console.log(roundedFloating([1, 2, 3, 4]));
+console.log(roundedFloating(45));
+console.log(roundedFloating(56.4));
+console.log(roundedFloating(34.9));
