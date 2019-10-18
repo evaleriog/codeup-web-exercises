@@ -997,6 +997,27 @@ var profileReport = {
         });
 
         return totalBalances;
+    },
+
+    getMostFavoriteFruit: function () {
+        var favorite = [];
+
+        profiles.forEach(function (profile) {
+            favorite.push(profile.favoriteFruit);
+        });
+
+        var fruits = {};
+
+        favorite.forEach(function (fruit, index) {
+            if(fruit === fruits.name){
+                fruits.count = fruits.count + 1;
+            }else {
+                fruits.name = fruit;
+                fruits.count = 1;
+            }
+        });
+
+        return fruits;
     }
 };
 
@@ -1004,3 +1025,4 @@ console.log("Total of Profiles: " + profileReport.getProfileCount());
 console.log("Total of Active Accounts: " + profileReport.getActiveCount());
 console.log("Total of Inactive Accounts: " + profileReport.getInactiveCount());
 console.log("Total Balances: " + profileReport.sumOfAllBalances());
+console.log(profileReport.getMostFavoriteFruit());
