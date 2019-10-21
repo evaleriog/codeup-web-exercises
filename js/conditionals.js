@@ -24,6 +24,7 @@ function enterNumber(userSelection){
     if(userSelection){
         var number = prompt("Enter a number: ");
 
+        //could also use !isNaN(number)
         if(parseFloat(number) || number === "0"){
 
             (number%2 === 0)?alert("Number is even"):alert("Number is odd");
