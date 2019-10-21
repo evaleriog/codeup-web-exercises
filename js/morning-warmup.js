@@ -158,6 +158,7 @@ function countUp(num){
     for(var x = 1; x <= parseFloat(num); x++){
         console.log(x);
     }
+    return "Done counting";
 }
 
 countUp(5);
