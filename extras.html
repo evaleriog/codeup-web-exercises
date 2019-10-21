@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Extras</title>
+</head>
+<body>
+    <script>
+        function filterNumbers(array){
+            var result = [];
+
+            array.forEach(function (element) {
+                if(typeof element === 'number'){
+                    result.push(parseFloat(element));
+                }
+            })
+
+            return result.sort(function(a, b){return a-b});
+        }
+
+        console.log(filterNumbers(["fred", true, 5, 3, [2,3,4], 1, 80, 30, "codeup"]));
+
+        function getOlder(){
+            var dogs = [
+                {
+                    name: "Chompers",
+                    breed: "Pug",
+                    age: 7
+                },
+                {
+                    name: "Freddy",
+                    breed: "Lab",
+                    age: 4
+                },
+                {
+                    name: "Mr. Pig",
+                    breed: "Mastif",
+                    age: 10
+                }
+            ];
+
+            dogs.forEach(function (dog) {
+                dog.age += 1;
+            });
+
+            return dogs;
+        }
+
+        console.log(getOlder());
+
+        function washCars(){
+            var cars = [
+                {
+                    make: 'Volvo',
+                    color: 'red',
+                    year: 1996,
+                    isDirty: true
+                },
+                {
+                    make: 'Toyota',
+                    color: 'black',
+                    year: 2004,
+                    isDirty: false
+                },
+                {
+                    make: 'Ford',
+                    color: 'white',
+                    year: 2007,
+                    isDirty: true
+                }
+            ];
+
+            cars.forEach(function (car) {
+                if(car.isDirty === true){
+                    car.isDirty = false;
+                }
+            });
+
+            return cars;
+        }
+
+        console.log(washCars());
+
+        var users = [
+            {
+                isAdmin: true,
+                email: 'user1@email.com'
+            },
+            {
+                isAdmin: true,
+                email: 'user2@email.com'
+            },
+            {
+                isAdmin: false,
+                email: 'user3@email.com'
+            }
+        ];
+
+        function adminList(object){
+            var counter = 0;
+
+            object.forEach(function (user) {
+                if(user.isAdmin === true){
+                    counter += 1;
+                }
+            });
+
+            return counter;
+        }
+
+        console.log(adminList(users));
+
+        function adminList2(object){
+
+            var result = [];
+
+            object.forEach(function (user) {
+                if(user.isAdmin === true){
+                    result.push(user.email);
+                }
+            });
+
+            return result;
+        }
+
+        console.log(adminList2(users));
+
+        function adminList3(object){
+
+            var result = [];
+
+            object.forEach(function (user) {
+                if(user.isAdmin === true){
+                    result.push(user);
+                }
+            });
+
+            return result;
+        }
+
+        console.log(adminList3(users));
+
+        var breads  = ["white", "wheat", "rhy", "white"];
+        var fillings = ["pb&j", "ham", "cheese steak", "tuna"];
+
+        function makeSandwhichObjects(bread, fill){
+            var sandwiches = [];
+
+            for(var x = 0; x < bread.length; x++){
+                var combinations = {
+                    bread: bread[x],
+                    filling: fill[x]
+                };
+
+                sandwiches.push(combinations);
+
+            }
+
+            return sandwiches;
+        }
+
+        console.log(makeSandwhichObjects(breads, fillings));
+    </script>
+</body>
+</html>
