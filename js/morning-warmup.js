@@ -151,3 +151,16 @@ function printArray(array){
 }
 
 printArray(["eduardo", "hello", "codeup", "class", "coding"]);
+
+//Function that counts from 1 up to the number that the user passes in.
+
+function countUp(num){
+    for(var x = 1; x <= parseFloat(num); x++){
+        console.log(x);
+    }
+}
+
+countUp(5);
+countUp(30);
+
+
