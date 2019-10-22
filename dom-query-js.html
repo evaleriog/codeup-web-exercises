@@ -24,7 +24,10 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
-
+<button id="button1">Button 1</button>
+<button id="button2">Button 2</button>
+<button id="button3">Button 3</button>
+<button id="button4">Button 4</button>
 <script>
     (function() {
         "use strict";
@@ -34,7 +37,11 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
 
-        mainHeader.innerHTML = "JavaScript is Cool";
+        //mainHeader.innerHTML = "JavaScript is Cool";
+
+        document.getElementById("button1").addEventListener('click', function () {
+            mainHeader.innerHTML = "JavaScript is Cool";
+        });
 
         // TODO: Uncomment the next line and get the sub header element by id
 
@@ -42,7 +49,11 @@
 
         // TODO: Set the text color of subHeader to blue
 
-        subHeader.style.color = "blue";
+        //subHeader.style.color = "blue";
+
+        document.getElementById("button2").addEventListener('click', function () {
+            subHeader.style.color = "blue";
+        });
 
         // TODO: Uncomment the next line and get all list items
 
@@ -51,13 +62,23 @@
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
 
-        for(var x=0; x < listItems.length; x+= 2){
-            if(listItems[x].getAttribute("data-dbid") === "1"){
-                listItems[x].style.color = "blue";
-            }else{
-                listItems[x].style.color = "gray";
+        // for(var x=0; x < listItems.length; x+= 2){
+        //     if(listItems[x].getAttribute("data-dbid") === "1"){
+        //         listItems[x].style.color = "blue";
+        //     }else{
+        //         listItems[x].style.color = "gray";
+        //     }
+        // }
+
+        document.getElementById("button3").addEventListener('click', function () {
+            for(var x=0; x < listItems.length; x+= 2){
+                if(listItems[x].getAttribute("data-dbid") === "1"){
+                    listItems[x].style.color = "blue";
+                }else{
+                    listItems[x].style.color = "gray";
+                }
             }
-        }
+        });
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
 
@@ -65,7 +86,11 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 
-        subParagraphs[0].innerText = "Mission Accomplished";
+        //subParagraphs[0].innerText = "Mission Accomplished";
+
+        document.getElementById("button4").addEventListener('click', function () {
+            subParagraphs[0].innerText = "Mission Accomplished";
+        });
 
     })();
 </script>
