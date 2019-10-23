@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Exercise</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Favorite Restaurants in San Antonio</h1>
+
+    <!-- The HTML element that serves as the Mapbox container -->
+    <div id='map'></div>
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <!-- Custom JS -->
+    <script>
+        "use strict";
+        mapboxgl.accessToken = mapboxToken;
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-streets-v10',
+            zoom: 17
+        });
+
+        geocode("18360 Blanco Rd, San Antonio, TX 78258", mapboxToken).then(function (result) {
+            map.setCenter(result);
+        });
+    </script>
+</body>
+</html>
