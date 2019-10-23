@@ -26,38 +26,71 @@
     <!-- Custom JS -->
     <script>
         "use strict";
-        var favRestaurants = [];
+
+        var favRestaurants = [{
+            name: "Taco Boulevard",
+            address: "18360 Blanco Rd, San Antonio, TX 78258",
+        }, {
+            name: "Carraba's",
+            address: "12507 W Interstate 10 78230 San Antonio"
+        },{
+            name: "Grimaldi's",
+            address: "330 E Basse Rd Ste 101, San Antonio, TX 78209"
+        }];
         var coordinates;
 
         mapboxgl.accessToken = mapboxToken;
+        var marker;
+        var popup;
 
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/satellite-streets-v10',
-            zoom: 10,
+            zoom: 11,
         });
 
-        geocode("18360 Blanco Rd, San Antonio, TX 78258", mapboxToken).then(function (result) {
-            map.setCenter(result);
+        var popupOptions = {
+            closeOnClick: false,
+            closeButton: false,
+            offset: 25
+        };
 
-            var marker = new mapboxgl.Marker()
-                .setLngLat(result)
-                .addTo(map);
+        favRestaurants.forEach(function (restaurant) {
+            geocode(restaurant.address, mapboxToken).then(function (result) {
+             marker = new mapboxgl.Marker()
+                    .setLngLat(result)
+                    .addTo(map);
 
-            map.setZoom(16);
+             popup = new mapboxgl.Popup(popupOptions)
+                 .setText(restaurant.name);
 
-            var popupOptions = {
-                closeOnClick: false,
-                closeButton: false,
-                offset: 25
-            };
-
-            var popUp = new mapboxgl.Popup(popupOptions)
-                .setText("Taco Boulevard");
-
-            marker.setPopup(popUp);
-
+             marker.setPopup(popup);
+            });
         });
+
+       map.setCenter([-98.524526, 29.555179]);
+
+        // geocode(, mapboxToken).then(function (result) {
+        //     map.setCenter(result);
+        //
+        //     var marker = new mapboxgl.Marker()
+        //         .setLngLat(result)
+        //         .addTo(map);
+        //
+        //     map.setZoom(16);
+        //
+        //     var popupOptions = {
+        //         closeOnClick: false,
+        //         closeButton: false,
+        //         offset: 25
+        //     };
+        //
+        //     var popUp = new mapboxgl.Popup(popupOptions)
+        //         .setText("Taco Boulevard");
+        //
+        //     marker.setPopup(popUp);
+        //
+        // });
     </script>
 </body>
 </html>
