@@ -31,11 +31,18 @@
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/satellite-streets-v10',
-            zoom: 17
+            zoom: 10,
         });
 
         geocode("18360 Blanco Rd, San Antonio, TX 78258", mapboxToken).then(function (result) {
             map.setCenter(result);
+
+            var marker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .addTo(map);
+
+            map.setZoom(16);
+
         });
     </script>
 </body>
