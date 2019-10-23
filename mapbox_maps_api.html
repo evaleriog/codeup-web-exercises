@@ -26,6 +26,9 @@
     <!-- Custom JS -->
     <script>
         "use strict";
+        var favRestaurants = [];
+        var coordinates;
+
         mapboxgl.accessToken = mapboxToken;
 
         var map = new mapboxgl.Map({
@@ -43,9 +46,14 @@
 
             map.setZoom(16);
 
-            var popUp = new mapboxgl.Popup()
-                .setText("Taco Boulevard")
-                .addTo(map);
+            var popupOptions = {
+                closeOnClick: false,
+                closeButton: false,
+                offset: 25
+            };
+
+            var popUp = new mapboxgl.Popup(popupOptions)
+                .setText("Taco Boulevard");
 
             marker.setPopup(popUp);
 
