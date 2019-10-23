@@ -143,6 +143,7 @@ function quotient(num1, num2) {
 
 console.log(quotient(8,"80"));
 
+
 //Morning warmup, function that takes in an array that has a length of 5. console log each element of the array.
 function printArray(array){
     for(var x = 0; x < array.length; x++){
@@ -151,6 +152,35 @@ function printArray(array){
 }
 
 printArray(["eduardo", "hello", "codeup", "class", "coding"]);
+
+//function that takes in a floating point number, and returns a number rounded down. it should return false for
+// all inputs that aren't numbers
+
+function roundedFloating(number){
+    if(typeof number === "number" && !isNaN(number)){
+        return Math.floor(parseFloat(number));
+    }else {
+        return false;
+    }
+}
+
+console.log(roundedFloating("45"));
+console.log(roundedFloating([1, 2, 3, 4]));
+console.log(roundedFloating(45));
+console.log(roundedFloating(56.4));
+console.log(roundedFloating(34.9));
+
+//morning warmup, function that takes in an input and returns true if the input is a string, at least 8 characters in
+//length, it should return false for all other input
+
+function isAString(string){
+    if(typeof string === "string" & string.length >= 8){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 //Function that counts from 1 up to the number that the user passes in.
 
@@ -164,24 +194,14 @@ function countUp(num){
 countUp(5);
 countUp(30);
 
-//function called createPersonObject that takes in a name and an age and returns a person object containing the name and age.
+//morning warmup 10/23/19
 function createPersonObject(name, age){
-    if(typeof name === 'string' && parseFloat(age)){
-        var person = {
-            name: name,
-            age: age
-        };
+    var person = {
+        name: name,
+        age: age
+    }
 
-        return person;
-    }
-    else {
-        return false;
-    }
+    return person
 }
 
-console.log(createPersonObject('Eduardo', 33));
-console.log(createPersonObject(hello, "45"));
-console.log(createPersonObject('Araceli', true));
-console.log(createPersonObject('Eduardo', null));
-console.log(createPersonObject("Nicolas", 5));
-
+console.log(createPersonObject("Eduardo", 33));
