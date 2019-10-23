@@ -164,4 +164,24 @@ function countUp(num){
 countUp(5);
 countUp(30);
 
+//function called createPersonObject that takes in a name and an age and returns a person object containing the name and age.
+function createPersonObject(name, age){
+    if(typeof name === 'string' && parseFloat(age)){
+        var person = {
+            name: name,
+            age: age
+        };
+
+        return person;
+    }
+    else {
+        return false;
+    }
+}
+
+console.log(createPersonObject('Eduardo', 33));
+console.log(createPersonObject(hello, "45"));
+console.log(createPersonObject('Araceli', true));
+console.log(createPersonObject('Eduardo', null));
+console.log(createPersonObject("Nicolas", 5));
 
