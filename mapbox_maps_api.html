@@ -17,6 +17,20 @@
 <body>
     <h1>My Favorite Restaurants in San Antonio</h1>
 
+    <div>
+        <label for="zoom">Enter the zoom</label>
+        <select id="zoom-pref">
+            <option value="5">5</option>
+            <option value="11" selected>11</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+        </select>
+        <button id="zoom-sel">Press for Zoom</button>
+    </div>
+<!--    <div>-->
+<!--        <input id="address" placeholder="Enter an address to center the map" type="text">-->
+<!--        <button id="address_sel">Enter</button>-->
+<!--    </div>-->
     <!-- The HTML element that serves as the Mapbox container -->
     <div id='map'></div>
 
@@ -30,16 +44,26 @@
         var favRestaurants = [{
             name: "Taco Boulevard",
             address: "18360 Blanco Rd, San Antonio, TX 78258",
+            info: "This is the best taco place, the flavor resemble <br> an authentic Mexican flavor.",
+            dishes: "Favorite dishes are Tacos al pastor.",
+            image: "img/pepper-hot-solid.svg"
         }, {
             name: "Carraba's",
-            address: "12507 W Interstate 10 78230 San Antonio"
+            address: "12507 W Interstate 10 78230 San Antonio",
+            info: "Favorite Italian restaurant, for me <br>the flavor taste very homemade.",
+            dishes: "Favorite dishes are Calamari, and the Lasagna",
+            image: "img/cloud-meatball-solid.svg"
         },{
             name: "Grimaldi's",
-            address: "330 E Basse Rd Ste 101, San Antonio, TX 78209"
+            address: "330 E Basse Rd Ste 101, San Antonio, TX 78209",
+            info: "Great place for pizza, <br>oven wood fire makes a great flavor.",
+            dishes: "Since you create your own ingredients, anything",
+            image: "img/pizza-slice-solid.svg"
         }];
         var coordinates;
 
         mapboxgl.accessToken = mapboxToken;
+
         var marker;
         var popup;
 
@@ -57,18 +81,35 @@
 
         favRestaurants.forEach(function (restaurant) {
             geocode(restaurant.address, mapboxToken).then(function (result) {
-             marker = new mapboxgl.Marker()
+                var el = document.createElement('div');
+                el.style.backgroundImage = "url(" + restaurant.image + ")";
+                el.style.width = "40px";
+                el.style.height = "40px";
+
+                marker = new mapboxgl.Marker(el)
                     .setLngLat(result)
-                    .addTo(map);
+                   .addTo(map);
 
              popup = new mapboxgl.Popup(popupOptions)
-                 .setText(restaurant.name);
+                 .setHTML("<h4>"+restaurant.name+"</h4><p>"+restaurant.info+"</p><p>"+restaurant.dishes+"</p>");
 
              marker.setPopup(popup);
             });
         });
 
        map.setCenter([-98.524526, 29.555179]);
+
+       var selectedZoom = document.getElementById("zoom-pref");
+       var changeZoom = document.getElementById("zoom-sel").addEventListener("click", function () {
+           var selection = selectedZoom.options[selectedZoom.selectedIndex].value;
+
+           map.setZoom(selection);
+       });
+
+       // var address = document.getElementById("address").value;
+       // var changeCenter = document.getElementById("address_sel").addEventListener("click", function () {
+       //     console.log(address);
+       // });
 
         // geocode(, mapboxToken).then(function (result) {
         //     map.setCenter(result);
