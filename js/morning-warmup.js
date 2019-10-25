@@ -204,3 +204,17 @@ function createPersonObject(name, age){
 }
 
 console.log(createPersonObject("Eduardo", 33));
+
+//MW 10/25/2019. Function that returns the number five but only when passed the string five
+
+function returnFive(str){
+    if(typeof  str === 'string' && str === "five"){
+        return 5;
+    }else{
+        return false;
+    }
+}
+
+console.log(returnFive(5));
+console.log(returnFive("five"));
+console.log(returnFive(true));
