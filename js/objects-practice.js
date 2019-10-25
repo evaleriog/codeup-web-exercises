@@ -1006,18 +1006,30 @@ var profileReport = {
             favorite.push(profile.favoriteFruit);
         });
 
-        var fruits = {};
+
+        var favoriteFruit = [];
 
         favorite.forEach(function (fruit, index) {
-            if(fruit === fruits.name){
-                fruits.count = fruits.count + 1;
-            }else {
-                fruits.name = fruit;
-                fruits.count = 1;
+            var fruits = {
+                name: fruit,
+                count: 1
+            };
+
+            if(index === 0){
+
             }
+            else if(fruit === favoriteFruit[index].name){
+                favoriteFruit[index].count += 1;
+            }else {
+                favoriteFruit.push(fruits);
+            }
+
         });
 
-        return fruits;
+        console.log(favoriteFruit);
+
+
+        return favorite;
     }
 };
 

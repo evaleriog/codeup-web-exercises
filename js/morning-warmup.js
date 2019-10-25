@@ -193,7 +193,7 @@ function countUp(num){
 countUp(5);
 countUp(30);
 
-//morning warmup 10/23/19 hello
+
 function createPersonObject(name, age){
     var person = {
         name: name,

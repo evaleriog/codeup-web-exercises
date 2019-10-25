@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Exercise</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 500px;
+        }
+
+        .zoom{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Favorite Restaurants in San Antonio</h1>
+
+    <div class="zoom">
+        <div>
+            <label for="zoom-pref">Enter the zoom</label>
+            <select id="zoom-pref">
+                <option value="5">5</option>
+                <option value="11" selected>11</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+            <button id="zoom-sel">Press for Zoom</button>
+        </div>
+        <div>
+            <input type="text" id="center" placeholder="Enter Address">
+            <button id="change_center">Submit</button>
+        </div>
+
+    </div>
+
+    <!-- The HTML element that serves as the Mapbox container -->
+    <div id='map'></div>
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <!-- Custom JS -->
+    <script>
+        "use strict";
+
+        var favRestaurants = [{
+            name: "Taco Boulevard",
+            address: "18360 Blanco Rd, San Antonio, TX 78258",
+            info: "This is the best taco place, the flavor resemble <br> an authentic Mexican flavor.",
+            dishes: "Favorite dishes are Tacos al pastor.",
+            image: "img/pepper-hot-solid.svg"
+        }, {
+            name: "Carraba's",
+            address: "12507 W Interstate 10 78230 San Antonio",
+            info: "Favorite Italian restaurant, for me <br>the flavor taste very homemade.",
+            dishes: "Favorite dishes are Calamari, and the Lasagna",
+            image: "img/cloud-meatball-solid.svg"
+        },{
+            name: "Grimaldi's",
+            address: "330 E Basse Rd Ste 101, San Antonio, TX 78209",
+            info: "Great place for pizza, <br>oven wood fire makes a great flavor.",
+            dishes: "Since you create your own ingredients, anything",
+            image: "img/pizza-slice-solid.svg"
+        }];
+        var coordinates;
+
+        mapboxgl.accessToken = mapboxToken;
+
+        var marker;
+        var popup;
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-streets-v10',
+            zoom: 11,
+        });
+
+        var popupOptions = {
+            closeOnClick: false,
+            closeButton: false,
+            offset: 25
+        };
+
+        favRestaurants.forEach(function (restaurant) {
+            geocode(restaurant.address, mapboxToken).then(function (result) {
+                var el = document.createElement('div');
+                el.style.backgroundImage = "url(" + restaurant.image + ")";
+                el.style.backgroundColor = "white";
+                el.style.borderRadius = "30px";
+                el.style.padding = "10px";
+                el.style.width = "30px";
+                el.style.height = "30px";
+
+                marker = new mapboxgl.Marker(el)
+                    .setLngLat(result)
+                    .addTo(map);
+
+                popup = new mapboxgl.Popup(popupOptions)
+                    .setHTML("<h4>"+restaurant.name+"</h4><p>"+restaurant.info+"</p><p>"+restaurant.dishes+"</p>");
+
+                 marker.setPopup(popup);
+            });
+        });
+
+       map.setCenter([-98.524526, 29.555179]);
+
+       var selectedZoom = document.getElementById("zoom-pref");
+       var changeZoom = document.getElementById("zoom-sel").addEventListener("click", function () {
+           var selection = selectedZoom.options[selectedZoom.selectedIndex].value;
+
+           map.setZoom(selection);
+       });
+
+       document.getElementById("change_center").addEventListener("click", function () {
+           var newCenter = document.getElementById("center").value;
+
+           geocode(newCenter, mapboxToken).then(function (result) {
+               map.setCenter(result);
+           });
+       });
+
+    </script>
+</body>
+</html>
