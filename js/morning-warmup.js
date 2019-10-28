@@ -218,3 +218,44 @@ function returnFive(str){
 console.log(returnFive(5));
 console.log(returnFive("five"));
 console.log(returnFive(true));
+
+//10/28/19. Function that return shopping cars object with the most oranges
+var shoppingCarts = [
+    {
+        apples: 8,
+        bananas: 2,
+        oranges: 4,
+        grapes: 24
+    }, {
+        apples: 3,
+        bananas: 6,
+        oranges: 8,
+        grapes: 12
+    } , {
+        apples: 0,
+        bananas: 12,
+        oranges: 0,
+        grapes: 0
+    } , {
+        apples: 4,
+        bananas: 0,
+        oranges: 8,
+        grapes: 10
+    }
+];
+
+function shoppingMostOranges(shopping){
+    var most = shopping[0].oranges;
+    var obj = {};
+
+    shopping.forEach(function (fruit) {
+        if(fruit.oranges >= most){
+            most = fruit.oranges;
+            obj = fruit;
+        }
+    });
+
+    return obj;
+}
+
+console.log(shoppingMostOranges(shoppingCarts));
