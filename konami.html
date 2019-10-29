@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+</head>
+<body>
+    <h1>Konami Code</h1>
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+        "use strict";
+
+        var KonamiCode = [38,38,40,40,37,39,37,39,66,65];
+        var marioCode = [38,38,40,40,37,39,37,39, 66,90];
+        var input = [];
+
+        $(document).keyup(function(event){
+            var key = event.which;
+
+            console.log(key);
+
+            if(key != 16 && key != 13){
+                input.push(key);
+            }else if(key === 13){
+                if(compareArrays(input, KonamiCode)){
+                    alert("You got 30 lives");
+                }else if(compareArrays(input, marioCode)){
+                    alert("MArio");
+                }
+                else {
+                    alert("Incorrect codes");
+                }
+                input = [];
+            }
+
+        });
+
+        function compareArrays(arr1, arr2){
+           if(JSON.stringify(arr1) == JSON.stringify(arr2)){
+               return true;
+           }
+           else{
+               return false;
+           }
+        }
+    </script>
+</body>
+</html>
