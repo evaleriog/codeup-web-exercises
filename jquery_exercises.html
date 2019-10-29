@@ -6,7 +6,75 @@
 </head>
 <body>
     <h1>Introduction to JQuery</h1>
-    <p>Codeup class for JQuery</p>
+    <div id="content">
+        <h2 class="codeup">Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in risus
+            imperdiet, facilisis libero quis, placerat justo. In ac ipsum a neque
+            porttitor efficitur vitae eu tortor. Vestibulum nec odio lacus. Nam urna
+            ligula, auctor eget eros sed, condimentum venenatis nisl. Praesent semper
+            sodales cursus. Morbi a lectus ac arcu tincidunt lobortis. Cras est
+            nisl, aliquet eget auctor vestibulum, vestibulum id arcu. Mauris est
+            massa, ultrices eu nisl nec, sodales malesuada mauris. Nam maximus
+            vehicula lectus non scelerisque. Nam viverra odio maximus pharetra
+            aliquet. Pellentesque rutrum sodales orci. Duis blandit urna at sapien
+            facilisis tristique. Pellentesque commodo vehicula semper. Nam lacus
+            quam, vulputate a efficitur sed, hendrerit eu lacus. Donec sodales erat
+            eu felis condimentum, suscipit euismod urna gravida
+        </p>
+
+        <h2 class="codeup">Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in risus
+            imperdiet, facilisis libero quis, placerat justo. In ac ipsum a neque
+            porttitor efficitur vitae eu tortor. Vestibulum nec odio lacus. Nam urna
+            ligula, auctor eget eros sed, condimentum venenatis nisl. Praesent semper
+            sodales cursus. Morbi a lectus ac arcu tincidunt lobortis. Cras est
+            nisl, aliquet eget auctor vestibulum, vestibulum id arcu. Mauris est
+            massa, ultrices eu nisl nec, sodales malesuada mauris. Nam maximus
+            vehicula lectus non scelerisque. Nam viverra odio maximus pharetra
+            aliquet. Pellentesque rutrum sodales orci. Duis blandit urna at sapien
+            facilisis tristique. Pellentesque commodo vehicula semper. Nam lacus
+            quam, vulputate a efficitur sed, hendrerit eu lacus. Donec sodales erat
+            eu felis condimentum, suscipit euismod urna gravida
+        </p>
+    </div>
+    
+    <div id="list">
+        <h2>Pellentesque vitae est sed lacus sagittis commodo</h2>
+        <ul>
+            <li>Mauris fermentum quam a libero tristique ornare</li>
+            <li>Duis aliquet sit amet tortor nec fermentum</li>
+            <li>Mauris fermentum quam a libero tristique ornare</li>
+            <li>Duis aliquet sit amet tortor nec fermentum</li>
+        </ul>
+    </div>
+
+    <div id="article">
+        <h2 class="hello">Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in risus
+            imperdiet, facilisis libero quis, placerat justo. In ac ipsum a neque
+            porttitor efficitur vitae eu tortor. Vestibulum nec odio lacus. Nam urna
+            ligula, auctor eget eros sed, condimentum venenatis nisl. Praesent semper
+            sodales cursus. Morbi a lectus ac arcu tincidunt lobortis. Cras est
+            nisl, aliquet eget auctor vestibulum, vestibulum id arcu. Mauris est
+            massa, ultrices eu nisl nec, sodales malesuada mauris. Nam maximus
+            vehicula lectus non scelerisque. Nam viverra odio maximus pharetra
+            aliquet. Pellentesque rutrum sodales orci. Duis blandit urna at sapien
+            facilisis tristique. Pellentesque commodo vehicula semper. Nam lacus
+            quam, vulputate a efficitur sed, hendrerit eu lacus. Donec sodales erat
+            eu felis condimentum, suscipit euismod urna gravida
+        </p>
+    </div>
+
+    <div id="second_list">
+        <h2 class="codeup">Pellentesque vitae est sed lacus sagittis commodo</h2>
+        <ul>
+            <li>Mauris fermentum quam a libero tristique ornare</li>
+            <li>Duis aliquet sit amet tortor nec fermentum</li>
+            <li>Mauris fermentum quam a libero tristique ornare</li>
+            <li>Duis aliquet sit amet tortor nec fermentum</li>
+        </ul>
+    </div>
+    
 
 
     <script src="js/jquery-2.2.4.js"></script>
@@ -14,7 +82,32 @@
         "use strict";
 
         $(document).ready(function () {
-            alert("The DOM has finished loading");
+
+            //Use jQuery to select an element by the id. Alert the contents of the element.
+            // var content = $('#second_list').html();
+            // alert(content);
+
+            //Update the jQuery code to select and alert a different id.
+            // content = $('#article').html();
+            // alert(content);
+
+            //Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+            // $('.codeup').css('border', '1px solid red');
+
+            //Using jQuery, set the font-size of all li elements to 20px.
+            // $('li').css('font-size', '20px');
+
+            //Craft selectors that highlight all the h1, p, and li elements
+            // $('li').css('color', 'green');
+            // $('h1').css('color', 'red');
+            // $('p').css('color', 'blue');
+
+            //Create a jQuery statement to alert the contents of your h1 element(s
+            // var header = $('h1').html();
+            // alert(header);
+
+            //Combine your selectors that highlight all the h1, p, and li elements
+            $('h1, p, li').css({'background-color':'blue', 'color':'white'});
         });
     </script>
 </body>
