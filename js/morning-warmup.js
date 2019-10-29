@@ -239,7 +239,7 @@ var shoppingCarts = [
     } , {
         apples: 4,
         bananas: 0,
-        oranges: 8,
+        oranges: 12,
         grapes: 10
     }
 ];
@@ -249,7 +249,7 @@ function shoppingMostOranges(shopping){
     var obj = {};
 
     shopping.forEach(function (fruit) {
-        if(fruit.oranges >= most){
+        if(fruit.oranges > most){
             most = fruit.oranges;
             obj = fruit;
         }
