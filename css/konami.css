@@ -1,11 +1,75 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+html {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 2em;
+    background-color: #eee;
+    font-family: 'Play', sans-serif;
+}
+
+#container{
+    width: 100%;
+    height: 100%;
+}
+#incorrect, #konami{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    margin: auto;
+    display: none;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+#mario{
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/supermario.gif");
+    background-position: center;
+    background-size: cover;
+    background-color: blue;
+    margin: auto;
+    display: none;
+}
+
+#lives{
+    color: #0fb784;
+    font-size: 25px;
+}
+
+#header, #keys_pressed{
+    width: 100%;
+}
+
+.video{
+    width: 100%;
+    height: 100%;
+}
+
+/* BUTTONS ON KEYS PRESSED*/
 .video-game-button {
     text-shadow: 1px 1px pink, -1px -1px maroon;
     font-family: 'Press Start 2P', cursive;
-    line-height: 2.5em;
+    line-height: 1.5em;
     text-align: center;
     display: inline-block;
-    width: 2.5em;
+    width: 1.5em;
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     -o-border-radius: 1em;
@@ -49,59 +113,7 @@
     top: .2em;
 }
 
-#incorrect, #konami{
-    width: 16em;
-    height: 9em;
-    background-color: blue;
-    margin: 5em auto;
-    display: none;
-}
-
-img{
-    width: 100%;
-    height: 100%;
-}
-
-#mario{
-    width: 16em;
-    height: 9em;
-    background-image: url("../img/supermario.gif");
-    background-position: center;
-    background-size: cover;
-    background-color: blue;
-    margin: 5em auto;
-    display: none;
-}
-
-#lives{
-    color: #0fb784;
-    font-size: 25px;
-}
-
-#header, #keys_pressed{
-    width: 100%;
-}
-
-html {
-    box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    height: 100vh;
-    font-size: 2em;
-    background-color: #eee;
-    font-family: 'Play', sans-serif;
-}
-
+/*NINTENDO SWITCH CSS*/
 .switch {
     position: relative;
     z-index: 1;
@@ -200,7 +212,7 @@ body {
 }
 
 .screen {
-    display: flex;
+    /*display: flex;*/
     box-sizing: content-box;
     position: relative;
     width: 16em;
@@ -212,86 +224,6 @@ body {
     border-left-width: 1.5em;
     border-right-width: 1.5em;
     border-radius: 0.375em;
-}
-
-.logo {
-    margin: auto;
-    text-transform: uppercase;
-}
-
-.logo h1 {
-    font-size: 1.0625em;
-    letter-spacing: 0.125em;
-}
-
-.logo h1 span {
-    display: block;
-    font-size: 55%;
-    letter-spacing: 0.40625em;
-}
-
-.icon {
-    height: 3.3125em;
-    margin-bottom: 0.4375em;
-    text-align: center;
-    animation: logo-icon 2s linear infinite;
-}
-
-.icon-part {
-    position: relative;
-    height: 100%;
-    display: inline-block;
-    margin: 0 0.03125em;
-}
-
-.icon-part.left {
-    width: 1.59375em;
-    border: 0.25em solid #fff;
-    border-radius: 0.8125em 0 0 0.8125em;
-}
-
-.icon-part.right {
-    width: 1.4375em;
-    background-color: #fff;
-    border-radius: 0 0.8125em 0.8125em 0;
-    animation: logo-right 2s linear infinite;
-}
-
-.icon-part::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    display: block;
-    width: 0.65625em;
-    height: 0.65625em;
-    transform: translateX(-50%);
-    border-radius: 50%;
-}
-
-.icon-part.left::before {
-    top: 0.46875em;
-    background-color: #fff;
-}
-
-.icon-part.right::before {
-    top: 1.5em;
-    background-color: #e60012;
-}
-
-@keyframes logo-right {
-    0% { transform: translateY(-40%); }
-    25% { transform: translateY(-50%); }
-    30% { transform: translateY(0); }
-    70% { transform: translateY(0); }
-    100% { transform: translateY(-40%); }
-}
-
-@keyframes logo-icon {
-    0% { transform: translateY(0); }
-    30% { transform: translateY(0); }
-    35% { transform: translateY(10%); }
-    40% { transform: translateY(0); }
-    100% { transform: translateY(0); }
 }
 
 .joy-con {
