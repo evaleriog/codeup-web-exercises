@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: black;
+
+        }
+
+        .container{
+            display: flex;
+        }
+
+        .card{
+            background-color: white;
+            width: 400px;
+            height: 400px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-between;
+        }
+
+        .content{
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 90%;
+            height: 85%;
+            margin: auto;
+        }
+
+        button{
+            background-color: #3B94D9;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="card1" class="card">
+            <div class="content" id="content1"></div>
+            <button id="btn_card1">Swap</button>
+        </div>
+
+        <div id="card2" class="card">
+            <div class="content" id="content2"></div>
+            <button id="btn_card2">Swap</button>
+        </div>
+
+        <div id="card3" class="card">
+            <div class="content" id="content3"></div>
+            <button id="btn_card3">Swap</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="card1" class="card">
+            <div class="content" id="content1"></div>
+            <button id="btn_card1">Swap</button>
+        </div>
+
+        <div id="card2" class="card">
+            <div class="content" id="content2"></div>
+            <button id="btn_card2">Swap</button>
+        </div>
+
+        <div id="card3" class="card">
+            <div class="content" id="content3"></div>
+            <button id="btn_card3">Swap</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="card1" class="card">
+            <div class="content" id="content1"></div>
+            <button id="btn_card1">Swap</button>
+        </div>
+
+        <div id="card2" class="card">
+            <div class="content" id="content2"></div>
+            <button id="btn_card2">Swap</button>
+        </div>
+
+        <div id="card3" class="card">
+            <div class="content" id="content3"></div>
+            <button id="btn_card3">Swap</button>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+        "use strict";
+
+        var background = ['url(img/street_art.jpeg)', 'url(img/abstract.jpeg)', 'url(img/painting.jpeg)'];
+        // var background1 = ;
+        // var background2 = ;
+        // var background3 = ;
+
+        $('#content1').css('background-image',background[0]);
+        $('#content2').css('background-image',background[1]);
+        $('#content3').css('background-image',background[2]);
+
+        $('#btn_card1').click(function (e) {
+            e.preventDefault();
+
+            swapLeftCenter();
+
+        });
+
+        $('#btn_card2').click(function (e) {
+            e.preventDefault();
+
+            var random = Math.floor(Math.random() * 2);
+
+            if(random === 1){
+                swapLeftCenter();
+            }else {
+                swapRigthCenter();
+            }
+
+        });
+
+        $('#btn_card3').click(function (e) {
+            e.preventDefault();
+
+            swapRigthCenter();
+
+        });
+
+        function swapLeftCenter(){
+            var left = $('#content1').css('background-image');
+            var right = $('#content2').css('background-image');
+
+            $('#content1').css('background-image', right);
+            $('#content2').css('background-image', left);
+        }
+
+        function swapRigthCenter() {
+            var left = $('#content2').css('background-image');
+            var right = $('#content3').css('background-image');
+
+            $('#content2').css('background-image', right);
+            $('#content3').css('background-image', left);
+        }
+    </script>
+</body>
+</html>
