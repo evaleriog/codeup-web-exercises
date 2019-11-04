@@ -11,12 +11,20 @@
         .highlight{
             background-color: yellow;
         }
+
+        ul, #register{
+            display: none;
+        }
     </style>
 </head>
 <body>
+    <div id="newsletter">
+        <h1>Would you like to sign up for our newsletter?</h1>
+        <span id="x_button" class="alert alert-info">x</span>
+    </div>
     <div>
         <h1>National Parks FAQs</h1>
-
+        <p id="register">Please register for our site</p>
         <a href="#" id="answers">Click</a>
 
         <dl>
@@ -104,12 +112,20 @@
 
         $('h3').click(function () {
             $(this).next().css('font-weight', 'bold');
+            $(this).next().fadeToggle();
         });
 
         $('li').click(function () {
             $(this).parent().children().first().css('color','blue');
         });
 
+        $('#x_button').click(function () {
+            $('#newsletter').hide();
+        });
+
+        setInterval(function () {
+            $('#register').show();
+        }, 8000);
     </script>
 </body>
 </html>
