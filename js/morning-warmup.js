@@ -346,3 +346,22 @@ function hamsterHeight (arr){
 }
 
 console.log(hamsterHeight(hamsters));
+
+//11/02/2019..3 Favorite Web applications
+
+//- Gas Buddy: find cheaper gas around where I am
+//- Amazon -easy to shop
+//- Netflix - easines to choose a show or movie
+
+//11/04/2019. Java Function that will take in the whole numbers 1-10 and return the number spelled out as a string
+
+function spelledNumbers(num){
+    var spelled = ["","one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+
+    return spelled[num];
+}
+
+console.log(spelledNumbers(8));
+console.log(spelledNumbers(3));
+console.log(spelledNumbers(1));
+
