@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>FAQs National Parks</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JQuery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Your custom styles go here -->
     <style>
         .invisible{
             visibility: hidden;
@@ -12,19 +16,33 @@
             background-color: yellow;
         }
 
-        ul, #register{
+        ul{
             display: none;
         }
     </style>
 </head>
 <body>
     <div id="newsletter">
-        <h1>Would you like to sign up for our newsletter?</h1>
-        <span id="x_button" class="alert alert-info">x</span>
+        <h1 class="alert alert-info">Would you like to sign up for our newsletter?</h1>
+        <span id="x_button" >x</span>
     </div>
     <div>
         <h1>National Parks FAQs</h1>
-        <p id="register">Please register for our site</p>
+
+        <div class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="register">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Register</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        To our website....
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <a href="#" id="answers">Click</a>
 
         <dl>
@@ -86,7 +104,10 @@
 
 
 
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- Your custom JS goes here -->
     <script src="js/jquery-2.2.4.js"></script>
     <script>
         "use strict";
