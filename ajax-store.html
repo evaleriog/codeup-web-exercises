@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Your custom styles go here -->
+    <style>
+
+    </style>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products" class="table table-borderless table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Title</th>
+            <th  scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col" colspan="3">Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+<button id="refresh" type="button" class="btn btn-info">Refresh</button>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- Your custom JS goes here -->
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an ajax GET request for /data/inventory.json
+    displayTools();
+
+    $('#refresh').click(function () {
+        $('#insertProducts').html("");
+        displayTools();
+    });
+
+    function displayTools() {
+        var generateTools = $.ajax("data/inventory.json");
+
+        generateTools.done(function (data) {
+            data.forEach(function (tool) {
+                var tools = "<tr><td>" + tool.title + "</td><td>" + tool.quantity + "</td><td>" + tool.price + "</td>";
+                var allCategories = "";
+
+                tool.categories.forEach(function (category) {
+                    if(tool.categories.length === 1){
+                        allCategories += "<td></td><td>" + category+ "</td><td></td>";
+                    }
+                    else {
+                        allCategories += "<td>"+ category + "</td>";
+                    }
+                });
+
+                tools += allCategories;
+
+                $("#insertProducts").append(tools);
+            });
+        });
+
+        generateTools.fail(function () {
+            console.log("Something wrong with the JSON path...");
+        });
+    }
+
+
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+})();
+</script>
+
+</body>
+</html>
