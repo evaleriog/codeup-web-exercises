@@ -8,14 +8,33 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- Your custom styles go here -->
     <style>
+        span{
+            margin-right: 1em;
+        }
 
+        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+            background-color: rgb(0, 162, 183);
+        }
+
+        .jumbotron{
+            background-image: url("img/tools.jpeg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.8;
+            color: white;
+        }
     </style>
 </head>
 <body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Tool Store</h1>
+        <p class="lead">You need any tool....we have it</p>
+    </div>
+</div>
 
-<h1>My Tool Store</h1>
-
-<table id="products" class="table table-borderless table-hover">
+<table id="products" class="table table-bordered table-striped table-hover table-sm">
     <thead class="thead-dark">
         <tr>
             <th scope="col">Title</th>
@@ -50,16 +69,21 @@
         generateTools.done(function (data) {
             data.forEach(function (tool) {
                 var tools = "<tr><td>" + tool.title + "</td><td>" + tool.quantity + "</td><td>" + tool.price + "</td>";
-                var allCategories = "";
+                var allCategories = "<td>";
 
                 tool.categories.forEach(function (category) {
-                    if(tool.categories.length === 1){
-                        allCategories += "<td></td><td>" + category+ "</td><td></td>";
-                    }
-                    else {
-                        allCategories += "<td>"+ category + "</td>";
-                    }
+                    // if(tool.categories.length === 1){
+                    //     allCategories += "<td></td><td>" + category+ "</td><td></td>";
+                    // }
+                    // else {
+                    //     allCategories += "<td>"+ category + "</td>";
+                    // }
+                    allCategories += "<span>";
+                    allCategories += category;
+                    allCategories += "</span>";
                 });
+
+                allCategories += "</td>";
 
                 tools += allCategories;
 

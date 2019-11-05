@@ -7,9 +7,28 @@
     <title>My Blog</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- Your custom styles go here -->
+    <style>
+        body{
+            background-color: black;
+        }
+
+        .jumbotron{
+            background-image: url("img/cooking.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <h1>My Blog</h1>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 badge-info badge-pill text-center">Welcome to my Blog</h1>
+            <p class="lead badge-info badge-pill text-center">Enjoy my cooking recipies for all type of events</p>
+        </div>
+    </div>
+
     <div id="posts" class="card-deck"></div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
