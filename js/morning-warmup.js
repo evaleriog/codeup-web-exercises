@@ -365,3 +365,18 @@ console.log(spelledNumbers(8));
 console.log(spelledNumbers(3));
 console.log(spelledNumbers(1));
 
+//11/05/2019. Write a function that will return 'Youre Welcome
+//but only when passed a JS objects with a porprty of gratitude that has value
+//thank you.
+
+function welcome(obj){
+    if (obj.gratitude.toLowerCase() === "thank you"){
+        return "You are Welcome!!!";
+    }
+}
+
+var hello = {
+    gratitude: "THANK YOU"
+};
+
+console.log(welcome(hello));
