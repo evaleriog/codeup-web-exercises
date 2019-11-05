@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quotes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Your custom styles go here -->
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome to my Site</h1>
+            <div id="display" class="lead"></div>
+        </div>
+    </div>
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Your custom JS goes here -->
+    <script>
+        var allQuotes = [];
+        var random = Math.floor(Math.random() * 84) + 1;
+        var display = " ";
+
+        var quotes = $.ajax("https://aphorisms.glitch.me/api/all");
+        quotes.done(function (data) {
+            data.forEach(function (quote) {
+
+                var html =  "<blockquote class='blockquote'>";
+                    html += "<p class='mb-0'>";
+                    html += quote.quote;
+                    html += "</p>";
+                    html += "<footer class='blockquote-footer'>";
+                    html += quote.author;
+                    html += "</footer>";
+                    html += "</blockquote>";
+
+                allQuotes.push(html);
+            });
+            display = allQuotes[random];
+            $('#display').append(display);
+        });
+        quotes.fail(function () {
+            console.log("Not connecting to the API");
+        });
+
+
+    </script>
+</body>
+</html>
