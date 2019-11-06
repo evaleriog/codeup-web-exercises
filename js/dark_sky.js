@@ -1,8 +1,11 @@
 "use strict";
+
+//constant variables to set initial application to San Antonio, TX
 const sanAntonioLatitude = 29.424349;
 const sanAntonioLongitude = -98.491142;
 const sanAntonioURL = createWeatherURL(sanAntonioLatitude, sanAntonioLongitude);
 
+//event handler to display loading animations while API is connecting
 $(document).ajaxSend(function () {
     let html = "<div class='loaders mb-3'><div class='loader'></div><div class='loader'></div><div class='loader'></div></div>";
     $('.card-columns').append(html);
@@ -10,25 +13,29 @@ $(document).ajaxSend(function () {
 
 
 });
-
+//event handler to set display to none to loading animations after the API is already connected
 $(document).ajaxComplete(function (requestName) {
     $('.loaders').css("display", "none");
 });
 
+//call function to display the information to San Antonio on load
 weatherCity(sanAntonioURL);
 
+//function that gets the forecast and displays the information on application
 function weatherCity(url){
 
     let lookWeather = $.ajax(url).done(function (data, status, jqXhr) {
         console.log(data);
 
+
         for(let x = 0; x < 3; x++) {
 
             let day = data.daily.data[x];
-
+            //display the weather information in div cards
             displayWeather(day);
         }
 
+        //call function to change the background
         changeBackground(data);
 
     }).fail(function () {
@@ -36,6 +43,8 @@ function weatherCity(url){
     });
 
 }
+
+//function to change the background of jumbotron based on the current city weather
 function changeBackground(day){
     let rightNow = day.currently;
     let temperature = Math.round(rightNow.temperature);
@@ -91,7 +100,10 @@ function changeBackground(day){
     console.log(icon);
 }
 
+//function to create and display cards with weather information
 function displayWeather(day){
+
+    //section to set the date provided in the format desired
     let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let daysOfWeek = ["Sun", "Mon", "Tues", 'Wed', "Thu", "Fri", "Sat"];
     let dateObject = new Date(day.time * 1000);
@@ -100,6 +112,7 @@ function displayWeather(day){
     let monthWeather = dateObject.getMonth();
     let yearWeather = dateObject.getFullYear();
     let newDate = daysOfWeek[dayOfWeek] + " " + months[monthWeather] + " " + dayWeather + ", " + yearWeather;
+    //variable to set icon according to summary of weather
     let imgSrc = "./icon/";
 
     switch (day.icon) {
@@ -144,6 +157,7 @@ function displayWeather(day){
             break;
     }
 
+    //creates card for each day of weather information
     let html = "<div class='today card mb-3'><div class='row no-gutters'><div class='col-md-4'>";
     html += "<img src='";
     html += imgSrc;
@@ -168,10 +182,12 @@ function displayWeather(day){
     html += newDate;
     html += "</small></p></div></div></div></div>";
 
+    //adds card to html
     $('.card-columns').append(html);
 
 }
 
+//function to create an URL and sebd a GET to Weather API
 function createWeatherURL(latitude, longitude){
     return "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + latitude + "," + longitude;
 }
