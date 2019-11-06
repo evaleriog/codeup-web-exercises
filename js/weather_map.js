@@ -9,7 +9,7 @@ var map = new mapboxgl.Map({
     zoom: 6,
 });
 
-map.addControl(new mapboxgl.NavigationControl());
+map.addControl(new mapboxgl.NavigationControl(),"bottom-right");
 map.setCenter([sanAntonioLongitude, sanAntonioLatitude]);
 
 var marker = new mapboxgl.Marker({draggable: true})

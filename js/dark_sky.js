@@ -3,10 +3,23 @@ const sanAntonioLatitude = 29.424349;
 const sanAntonioLongitude = -98.491142;
 const sanAntonioURL = createWeatherURL(sanAntonioLatitude, sanAntonioLongitude);
 
+$(document).ajaxSend(function () {
+    let html = "<div class='loaders mb-3'><div class='loader'></div><div class='loader'></div><div class='loader'></div></div>";
+    $('.card-columns').append(html);
+    $('.loaders').css("display", "flex");
+
+
+});
+
+$(document).ajaxComplete(function (requestName) {
+    $('.loaders').css("display", "none");
+});
+
 weatherCity(sanAntonioURL);
 
 function weatherCity(url){
-    $.ajax(url).done(function (data) {
+
+    let lookWeather = $.ajax(url).done(function (data, status, jqXhr) {
         console.log(data);
 
         for(let x = 0; x < 3; x++) {
@@ -15,9 +28,67 @@ function weatherCity(url){
 
             displayWeather(day);
         }
+
+        changeBackground(data);
+
     }).fail(function () {
         console.log("Connection to the API not working...");
     });
+
+}
+function changeBackground(day){
+    let rightNow = day.currently;
+    let temperature = Math.round(rightNow.temperature);
+    let icon = rightNow.icon;
+    let imgURL = "./icon/";
+
+    switch (icon) {
+        case "clear-day":
+            imgURL += "clear-day.gif";
+            break;
+        case "clear-night":
+            imgURL += "clear-night.gif";
+            break;
+        case "rain":
+            imgURL += "rain.gif";
+            break;
+        case "snow":
+            imgURL += "snow.gif";
+            break;
+        case "sleet":
+            imgURL += "sleet.gif";
+            break;
+        case "wind":
+            imgURL += "wind.gif";
+            break;
+        case "fog":
+            imgURL += "fog.gif";
+            break;
+        case "cloudy":
+            imgURL += "cloudy.gif";
+            break;
+        case "partly-cloudy-day":
+            imgURL += "partly-cloudy-day.gif";
+            break;
+        case "partly-cloudy-night":
+            imgURL += "partly-cloudy-night.gif";
+            break;
+        case "hail":
+            imgURL += "hail.gif";
+            break;
+        case "thunderstorm":
+            imgURL += "thunderstorm.gif";
+            break;
+        default:
+            imgURL += "clear-day.gif";
+            break;
+    }
+    let urlImg = 'url(' + imgURL + ')';
+
+    $('.jumbotron').css('background-image', urlImg);
+    $('#current_temperature').text(temperature + "\xB0");
+
+    console.log(icon);
 }
 
 function displayWeather(day){

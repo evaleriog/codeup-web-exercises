@@ -9,9 +9,18 @@
     <!-- Mapbox CSS -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
     <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text|Fredoka+One&display=swap" rel="stylesheet">
     <style>
         body{
-            background-color: black;
+            background-color: #162936;
+        }
+
+        .display-4{
+            font-family: 'Big Shoulders Text', cursive;
+        }
+
+        #place{
+            font-family: 'Fredoka One', cursive;
         }
 
         #map {
@@ -22,10 +31,23 @@
             border-radius: 10px;
         }
 
+        .jumbotron{
+            background-image: url("icon/clear-day.gif");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .lead{
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Fredoka One', cursive;
+        }
+
         #container{
             width: 80%;
             margin:0 auto;
-            background-color: #3B94D9;
+            background-color: #C4DD96;
         }
 
         .card-columns{
@@ -55,7 +77,6 @@
 
         .loaders{
             width: 100%;
-            display: flex;
             justify-content: space-evenly;
             display: none;
         }
@@ -63,10 +84,10 @@
         .loader {
             border: 16px solid #f3f3f3;
             border-radius: 50%;
-            border-top: 16px solid blue;
-            border-right: 16px solid green;
-            border-bottom: 16px solid red;
-            border-left: 16px solid pink;
+            border-top: 16px solid #7E9921;
+            border-right: 16px solid #162936;
+            border-bottom: 16px solid #D3D53F;
+            border-left: 16px solid #162936;
             width: 120px;
             height: 120px;
             -webkit-animation: spin 2s linear infinite;
@@ -92,7 +113,9 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Weather Map Application</h1>
-                <p class="lead"><span id="place">San Antonio, Texas, United States</span></p>
+                <p class="lead"><span id="place">San Antonio, Texas, United States</span>
+                    <span id="current_temperature"></span>
+                </p>
             </div>
         </div>
 
@@ -101,11 +124,7 @@
     <main class="p-2">
 <!--        displays the 3-day forecast information-->
         <div class="card-columns card-deck">
-            <div class="loaders mb-3">
-                <div class="loader"></div>
-                <div class="loader"></div>
-                <div class="loader"></div>
-            </div>
+            <div class="loaders mb-3"></div>
         </div>
 
 <!--        displays map with search input box to look up places-->
