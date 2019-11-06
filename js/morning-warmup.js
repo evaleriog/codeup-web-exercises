@@ -380,3 +380,23 @@ var hello = {
 };
 
 console.log(welcome(hello));
+
+//11/06/2019. functiom that returns a random boolean
+
+function randomBoolean(){
+    // let random = Math.floor(Math.random() * 1);
+    //
+    // if(random === 0 ){
+    //     return false;
+    // }
+    // else if(random === 1){
+    //     return true;
+    // }
+
+    return Boolean(Math.floor(Math.random() * 2));
+
+}
+
+console.log(randomBoolean());
+console.log(randomBoolean());
+console.log(randomBoolean());
