@@ -17,7 +17,7 @@
 <div id="container">
     <header>
 
-        <div class="jumbotron jumbotron-fluid">
+        <div class="jumbotron jumbotron-fluid mb-0">
             <div class="container">
                 <h1 class="display-4 badge-pill badge-light text-center">Weather Map Application</h1>
                 <p class="lead"><span id="place" class="badge-pill badge-light">San Antonio, Texas, United States</span>
@@ -29,8 +29,21 @@
     </header>
 
     <main class="p-2">
-<!--        displays the 3-day forecast information-->
-        <div class="card-columns card-deck">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="forecastDaysSelector">Forecast</label>
+            </div>
+            <select class="custom-select" id="forecastDaysSelector">
+                <option selected value="3">3 Days</option>
+                <option value="4">4 Days</option>
+                <option value="5">5 Days</option>
+                <option value="6">6 Days</option>
+                <option value="7">7 Days</option>
+                <option value="8">8 Days</option>
+            </select>
+        </div>
+<!--        displays the forecast information-->
+        <div class="card-columns card-deck m-auto">
             <div class="loaders mb-3"></div>
         </div>
 
@@ -75,6 +88,18 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/dark_sky.js"></script>
 <script src="js/weather_map.js"></script>
+<script>
+    var forecast = [];
+    var forecastSelector = 3;
+    var globalURL = sanAntonioURL;
+
+    $(document).ready(function () {
+        //empty html display to add cards
+        $('.card-columns').html("");
+        //call function to display the information to San Antonio on load
+        weatherCity(sanAntonioURL, forecast, forecastSelector);
+    });
+</script>
 
 </body>
 </html>

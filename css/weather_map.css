@@ -19,7 +19,7 @@ body{
 }
 
 .jumbotron{
-    background-image: url("icon/clear-day.gif");
+    background-image: url("../icon/clear-day.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -38,6 +38,7 @@ body{
 }
 
 .card-columns{
+    /*display: inline-block;*/
     column-count: 3;
 }
 
@@ -89,4 +90,10 @@ body{
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.forecast{
+    min-width: 320px;
+    max-width: 320px;
+    width: 320px;
 }
