@@ -1,18 +1,29 @@
 "use strict";
-var address;
-var date = new Date();
 
-console.log(date);
+let date = new Date();
+let hour = date.getHours();
+let minutes = date.getMinutes();
 
 mapboxgl.accessToken = mapboxToken;
 
 //creates a new map with initial zoom and style
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v9',
     zoom: 6,
 });
 
+// disable map rotation using right click + drag
+map.dragRotate.disable();
+
+// disable map rotation using touch rotation gesture
+map.touchZoomRotate.disableRotation();
+
+if((hour >= 6 && hour <= 18)&&(minutes >= 1)){
+    map.setStyle('mapbox://styles/mapbox/navigation-preview-day-v2');
+}else if(((hour >= 18 && hour <= 24) || (hour >= 0 && hour < 6))&&(minutes >= 1)){
+    map.setStyle('mapbox://styles/mapbox/navigation-preview-night-v2');
+    $('#container').css("background-color","#7E9921");
+}
 //adds navigation control on the bottom right on the map
 map.addControl(new mapboxgl.NavigationControl(),"bottom-right");
 //sets initial center to San Antonio, TX
@@ -27,10 +38,11 @@ var marker = new mapboxgl.Marker({draggable: true})
 //and changes the information on the website
 function onDragEnd(){
     let lngLat = marker.getLngLat();
-    let url = createWeatherURL(lngLat.lat, lngLat.lng);
+    globalURL = createWeatherURL(lngLat.lat, lngLat.lng);
 
+    //empty html display to add cards
     $('.card-columns').html("");
-    weatherCity(url);
+    weatherCity(globalURL, forecast, forecastSelector);
     changeCity(lngLat.lng, lngLat.lat);
 }
 
@@ -49,10 +61,11 @@ $('#search').click(function (e) {
             let longitud = result[0];
             let latitude = result[1];
             //create a new URL for the new place
-            let cityURL = createWeatherURL(latitude, longitud);
-            //display the new information on website
+            globalURL = createWeatherURL(latitude, longitud);
+            //empty html display to add cards
             $('.card-columns').html("");
-            weatherCity(cityURL);
+            //display the new information on website
+            weatherCity(globalURL, forecast, forecastSelector);
             changeCity(longitud, latitude);
 
             //set both marker and map center to place searched
@@ -65,6 +78,7 @@ $('#search').click(function (e) {
 
 //function to change the name of city, state, and country on the jumbotron
 function changeCity(long, lat){
+    let address;
     //use reverse geocode function to get and address object from Mapbox
     reverseGeocode({lng: long, lat: lat}, mapboxToken).then(function (results) {
         address = results;
@@ -96,4 +110,12 @@ function changeCity(long, lat){
 //event handler for the zoom range on map to change the map zoom as drag
 $(document).on('input change', '#formControlRange', function () {
     map.setZoom($('#formControlRange').val());
+});
+
+$(document).keyup(function (event) {
+    let key = event.which;
+
+    if(key === 13){
+        $('#search').trigger('click');
+    }
 });

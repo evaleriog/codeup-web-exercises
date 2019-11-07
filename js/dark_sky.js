@@ -10,31 +10,27 @@ $(document).ajaxSend(function () {
     let html = "<div class='loaders mb-3'><div class='loader'></div><div class='loader'></div><div class='loader'></div></div>";
     $('.card-columns').append(html);
     $('.loaders').css("display", "flex");
-
-
 });
 //event handler to set display to none to loading animations after the API is already connected
 $(document).ajaxComplete(function (requestName) {
     $('.loaders').css("display", "none");
 });
 
-//call function to display the information to San Antonio on load
-weatherCity(sanAntonioURL);
-
 //function that gets the forecast and displays the information on application
-function weatherCity(url){
-
+function weatherCity(url, arr, selector){
+    arr = [];
     let lookWeather = $.ajax(url).done(function (data, status, jqXhr) {
         console.log(data);
 
+        //create a card for each forecast day and push it into forecast array
+        data.daily.data.forEach(function (forecast) {
+            arr.push(displayWeather(forecast));
+        });
 
-        for(let x = 0; x < 3; x++) {
-
-            let day = data.daily.data[x];
-            //display the weather information in div cards
-            displayWeather(day);
+        //display cards depending on forecast day selector
+        for(let x = 0; x < selector; x++){
+            $('.card-columns').append(arr[x]);
         }
-
         //call function to change the background
         changeBackground(data);
 
@@ -158,7 +154,7 @@ function displayWeather(day){
     }
 
     //creates card for each day of weather information
-    let html = "<div class='today card mb-3'><div class='row no-gutters'><div class='col-md-4'>";
+    let html = "<div class='forecast card mb-3'><div class='row no-gutters'><div class='col-md-4'>";
     html += "<img src='";
     html += imgSrc;
     html += "' class='card-img' alt=''>";
@@ -182,8 +178,7 @@ function displayWeather(day){
     html += newDate;
     html += "</small></p></div></div></div></div>";
 
-    //adds card to html
-    $('.card-columns').append(html);
+    return html;
 
 }
 
@@ -191,3 +186,9 @@ function displayWeather(day){
 function createWeatherURL(latitude, longitude){
     return "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + latitude + "," + longitude;
 }
+
+//changes the global variables of forecast selector as changed in select element
+$('#forecastDaysSelector').on('change',function () {
+    forecastSelector = this.value;
+    weatherCity(globalURL, forecast, forecastSelector);
+});
