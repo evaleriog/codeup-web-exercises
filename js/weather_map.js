@@ -102,8 +102,13 @@ function changeCity(long, lat){
             }
         });
 
+        let html = "<span class='badge-pill badge-light text-secondary'>" + city + "</span>";
+        html += "<span class='badge-pill badge-light text-dark'>" + state + "</span>";
+        html += "<span class='badge-pill badge-light text-success'>" + country + "</span>";
+
         //change the text in the jumbotron
-        $('#place').text(city + ", " + state + ", " + country);
+        $('#place').html("");
+        $('#place').append(html);
     });
 }
 

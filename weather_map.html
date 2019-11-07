@@ -19,10 +19,11 @@
 
         <div class="jumbotron jumbotron-fluid mb-0">
             <div class="container">
-                <h1 class="display-4 badge-pill badge-light text-center">Weather Map Application</h1>
-                <p class="lead"><span id="place" class="badge-pill badge-light">San Antonio, Texas, United States</span>
+                <h1 class="display-4 badge-pill badge-light text-center text-primary">Weather Map Application</h1>
+                <div class="lead">
+                    <span id="place"></span>
                     <span id="current_temperature" class="badge-pill badge-light"></span>
-                </p>
+                </div>
             </div>
         </div>
 
@@ -98,6 +99,7 @@
         $('.card-columns').html("");
         //call function to display the information to San Antonio on load
         weatherCity(sanAntonioURL, forecast, forecastSelector);
+        changeCity(sanAntonioLongitude, sanAntonioLatitude);
     });
 </script>
 

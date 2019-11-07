@@ -154,12 +154,12 @@ function displayWeather(day){
     }
 
     //creates card for each day of weather information
-    let html = "<div class='forecast card mb-3'><div class='row no-gutters'><div class='col-md-4'>";
+    let html = "<div class='forecast card bg-light border-dark mb-3'><div class='row no-gutters'><div class='col-md-4'>";
     html += "<img src='";
     html += imgSrc;
     html += "' class='card-img' alt=''>";
     html += "</div><div class='col-md-8'><div class='card-body'>";
-    html += "<h5 class='card-title temperature'>";
+    html += "<h5 class='card-title temperature text-primary'>";
     html += Math.round(day.temperatureHigh);
     html += "\xB0 / ";
     html += Math.round(day.temperatureLow);
@@ -190,5 +190,6 @@ function createWeatherURL(latitude, longitude){
 //changes the global variables of forecast selector as changed in select element
 $('#forecastDaysSelector').on('change',function () {
     forecastSelector = this.value;
+    $('.card-columns').html("");
     weatherCity(globalURL, forecast, forecastSelector);
 });
