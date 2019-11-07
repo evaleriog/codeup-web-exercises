@@ -51,17 +51,17 @@
 <!--        displays map with search input box to look up places-->
         <div id="map">
 <!--            displays the search textbox and an button-->
-            <div id="search_panel">
-                <div class="input-group-sm mb-3 search_group">
+            <form id="search_panel" class="form-inline">
+                <div class="input-group input-group-sm mb-3 search_group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Place</span>
                     </div>
-                    <input type="text" placeholder="Enter a place you want to find" aria-label="Username" aria-describedby="basic-addon1" id="place_search">
+                    <input type="text" placeholder="Enter a place to find" aria-label="Username" aria-describedby="basic-addon1" id="place_search">
                     <div class="input-group-append">
                         <button type="submit" id="search" class="btn btn-primary btn-lg">Search</button>
                     </div>
                 </div>
-            </div>
+            </form>
 
             <div class="form-group slider">
                 <label for="formControlRange">Zoom Map</label>
@@ -71,9 +71,6 @@
         </div>
     </main>
 
-    <footer>
-
-    </footer>
 </div>
 
 

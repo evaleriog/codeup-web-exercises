@@ -24,8 +24,6 @@ if((hour >= 6 && hour <= 18)&&(minutes >= 1)){
     map.setStyle('mapbox://styles/mapbox/navigation-preview-night-v2');
     $('#container').css("background-color","#7E9921");
 }
-//adds navigation control on the bottom right on the map
-map.addControl(new mapboxgl.NavigationControl(),"bottom-right");
 //sets initial center to San Antonio, TX
 map.setCenter([sanAntonioLongitude, sanAntonioLatitude]);
 
