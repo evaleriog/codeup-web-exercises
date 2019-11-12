@@ -400,3 +400,19 @@ function randomBoolean(){
 console.log(randomBoolean());
 console.log(randomBoolean());
 console.log(randomBoolean());
+
+//11/12/2019. Function that returns and array of all even numbers
+
+function arrayEven(arr){
+    let results = [];
+
+    arr.forEach(function (num) {
+        if(num % 2 === 0){
+            results.push(num);
+        }
+    });
+
+    return results;
+}
+
+console.log(arrayEven([1,2,3,4,5,6,7,8,9]));
