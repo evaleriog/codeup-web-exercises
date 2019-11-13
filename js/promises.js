@@ -50,3 +50,13 @@ function getLastCommit(username){
 }
 
 getLastCommit("evaleriog");
+
+const lastCommit = (username) => {
+    fetch(`https://api.github.com/users/${username}/events`, {headers:{'Authorization': `token ${githubKey}`}})
+        .then(response => response.json())
+        .then(data => data.find(event => event.type === "PushEvent"))
+        .then(event => event.created_at)
+        .then(date => console.log(date));
+}
+
+lastCommit("evaleriog");
