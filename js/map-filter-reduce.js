@@ -78,7 +78,15 @@ const longestEmail = users.reduce((longEmail, user, index, array) => {
 },"");
 
 console.log(longestEmail);
-
+        //davids solution
+// let longestEmail = usersEmails.reduce((longest, email) => {
+//     if(email.length > longest.length){
+//         return email;
+//     }  else{
+//         return longest;
+//     }
+// }, "");
+//
 // Use .reduce to get the list of user's names in a single string. ' +
 // 'Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
@@ -90,13 +98,13 @@ console.log(`Your instructors are: ${allNames.split(" ").join(", ")}.`);
 
 //Bonus
 
-const languages = users.reduce((total, user) => {
+const languages = Array.from(users.reduce((total, user) => {
    user.languages.forEach(function (language) {
        total.add(language);
-   });
+});
 
     return total;
-},new Set());
+},new Set()));
 
 console.log(languages);
 
