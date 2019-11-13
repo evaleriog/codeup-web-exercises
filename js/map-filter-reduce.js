@@ -62,9 +62,20 @@ console.log(`The average years of experience is ${average}`);
 //Use .reduce to get the longest email from the list of users.
 
 
-const longestEmail = users.reduce(function (a,b) {
-    return a.email.length > b.email.length ? a : b;
-});
+// const longestEmail = users.reduce(function (a,b) {
+//     return a.email.length > b.email.length ? a : b;
+// });
+let longestIndex = users[0].email.length;
+
+const longestEmail = users.reduce((longEmail, user, index, array) => {
+
+    if(user.email.length >= longestIndex) {
+        longEmail = user.email;
+        longestIndex = user.email.length;
+    }
+
+     return longEmail;
+},"");
 
 console.log(longestEmail);
 
@@ -79,16 +90,13 @@ console.log(`Your instructors are: ${allNames.split(" ").join(", ")}.`);
 
 //Bonus
 
-// let languages = new Set();
-//
-// users.forEach(function (user) {
-//     user.languages.forEach(function (language) {
-//         languages.add(language);
-//     });
-// });
-//
-// console.log(languages);
+const languages = users.reduce((total, user) => {
+   user.languages.forEach(function (language) {
+       total.add(language);
+   });
 
-const languages = users.reduce(function (user) {
+    return total;
+},new Set());
 
-});
+console.log(languages);
+
