@@ -416,3 +416,35 @@ function arrayEven(arr){
 }
 
 console.log(arrayEven([1,2,3,4,5,6,7,8,9]));
+
+//11/14/2019. Function that returns a promise. The promise should resolve if the
+//function takes in an even number, and rejects if passed anything else.
+
+// function evenPromise(num){
+//     return new Promise((resolve, reject) =>{
+//         if(num % 2 === 0){
+//             resolve();
+//         }else{
+//             reject();
+//         }
+//     });
+// }
+// let request = evenPromise(9);
+// request.then(() => console.log("its Even"));
+// request.catch(() => console.log("Rejected"));
+
+const evenPromise = num => {
+    return new Promise((resolve, reject) =>{
+        if(num % 2 ===0){
+            resolve(`Why yes, the number ${num} is an even number`);
+        }else{
+            reject(`Woe is you. ${num} is not an even number`);
+        }
+    });
+};
+
+evenPromise(4).then(message => console.log(message))
+    .catch(message => console.log(message));
+evenPromise(9).then(message => console.log(message))
+    .catch(message => console.log(message));
+
