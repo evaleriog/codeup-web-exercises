@@ -115,12 +115,12 @@ console.log("The number being greater than five is " + greaterFive());
 
 //Function that returns the message "Hello there, stranger" with the option fore the user to input a string to
 //replace stranger
-function sayHello(name = "stranger"){
-    return "Hello there, " + name + ".";
-}
-
-var promptName = prompt("Enter a name:");
-alert(sayHello(promptName));
+// function sayHello(name = "stranger"){
+//     return "Hello there, " + name + ".";
+// }
+//
+// var promptName = prompt("Enter a name:");
+// alert(sayHello(promptName));
 
 //function that accepts and array and returns the length of that array
 function arrayLength(array){
@@ -448,3 +448,22 @@ evenPromise(4).then(message => console.log(message))
 evenPromise(9).then(message => console.log(message))
     .catch(message => console.log(message));
 
+//11/15/2019. Function that returns a promise. It should resolve with a message of Hello. Write to the html doc an h1 that has
+//the text of the resolve.
+
+const helloPromise = () => {
+    return new Promise((resolve, reject) =>{
+        // if(resolve){
+        //     return "Hello";
+        // }else if(reject) {
+        //     return "Error";
+        // }
+        resolve("Hello!");
+    });
+};
+
+helloPromise().then(message =>{
+    //$('body').html(`<h1>${message}</h1>`);
+    document.getElementsByTagName('body')[0].innerHTML += `<h1>${message}</h1>`;
+});
+//sayHello().catch(message => console.log(message));
