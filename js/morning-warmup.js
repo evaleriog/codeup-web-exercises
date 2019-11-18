@@ -467,3 +467,15 @@ helloPromise().then(message =>{
     document.getElementsByTagName('body')[0].innerHTML += `<h1>${message}</h1>`;
 });
 //sayHello().catch(message => console.log(message));
+
+//11/18/2019. Function that returns PI to 6 decimal places as a number
+
+// function retPiNum(){
+//     return Math.PI.toPrecision(6);
+// }
+//
+// console.log(retPiNum());
+
+const piToSix = () => parseFloat(Math.PI.toFixed(6));
+
+console.log(piToSix());
